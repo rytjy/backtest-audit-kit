@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>表格批量整理工具 · 合并 / 清洗 / 去重 / 汇总</title>
+<style>
+  :root{--bg:#0f1720;--card:#18222e;--line:#2a3746;--fg:#e8eef5;--dim:#93a4b8;--acc:#2bb3a3;--warn:#c2410c}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 20px 80px}
+  h1{font-size:26px;margin:0 0 6px}
+  .sub{color:var(--dim);margin-bottom:18px}
+  .badge{display:inline-block;background:#10322e;color:var(--acc);border:1px solid #1d5c54;border-radius:999px;padding:2px 10px;font-size:12px;margin-left:8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:16px}
+  .drop{border:2px dashed #3a4a5e;border-radius:12px;padding:30px;text-align:center;color:var(--dim);cursor:pointer;transition:.15s}
+  .drop:hover,.drop.on{border-color:var(--acc);color:var(--fg);background:#14202b}
+  .files{margin-top:12px;font-size:14px}
+  .files div{padding:4px 0;border-bottom:1px dashed #24313f}
+  .row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  label{font-size:14px;color:var(--dim);display:flex;align-items:center;gap:6px}
+  input[type=text],select,button{font:inherit;border-radius:8px;border:1px solid var(--line);background:#101a24;color:var(--fg);padding:7px 11px}
+  button{cursor:pointer;background:var(--acc);color:#04211d;border:none;font-weight:600}
+  button.ghost{background:transparent;border:1px solid var(--line);color:var(--fg);font-weight:400}
+  button:disabled{opacity:.45;cursor:not-allowed}
+  .tbl{overflow:auto;max-height:420px;border:1px solid var(--line);border-radius:8px;margin-top:12px}
+  table{border-collapse:collapse;font-size:13px;white-space:nowrap}
+  th,td{border-bottom:1px solid #223040;padding:6px 10px;text-align:left}
+  th{position:sticky;top:0;background:#141e29;z-index:1}
+  .stat{color:var(--dim);font-size:13px;margin-top:8px}
+  .err{color:#ff9d8a;font-size:13px}
+  .prv{color:var(--acc)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>表格批量整理工具 <span class="badge">全部在本地浏览器里跑 · 不上传任何数据</span></h1>
+  <div class="sub">把散落、格式不一致的 Excel / CSV 丢进来 → 合并成一张 → 清洗去重 → 一键汇总 → 导出。</div>
+
+  <div class="card">
+    <div id="drop" class="drop">
+      <div style="font-size:17px;margin-bottom:6px">把 CSV / Excel 文件拖到这里，或点击选择</div>
+      <div style="font-size:13px">支持多文件 · 文件不会离开你的电脑</div>
+      <input id="file" type="file" multiple accept=".csv,.xlsx,.xls,.txt" hidden>
+    </div>
+    <div id="files" class="files"></div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <label><input type="checkbox" id="optClean" checked> 清洗空白/全角</label>
+      <label><input type="checkbox" id="optNum" checked> 数字识别（1,000 / ¥ / %）</label>
+      <label><input type="checkbox" id="optDropEmpty" checked> 去掉空行</label>
+      <label>去重方式
+        <select id="optDedupe">
+          <option value="none">不去重</option>
+          <option value="all">按整行</option>
+          <option value="keys">按指定列</option>
+        </select>
+      </label>
+      <input type="text" id="dedupeKeys" placeholder="指定列，逗号分隔，如：姓名,日期" style="min-width:240px">
+    </div>
+    <div class="row" style="margin-top:14px">
+      <button id="btnMerge">合并并预览</button>
+      <button id="btnCSV" class="ghost" disabled>导出 CSV</button>
+      <button id="btnXLSX" class="ghost" disabled>导出 Excel</button>
+    </div>
+    <div id="msg" class="stat"></div>
+    <div id="warn" class="stat"></div>
+    <div id="preview" class="tbl" style="display:none"></div>
+    <div id="stat" class="stat"></div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <strong>分组汇总</strong>
+      <label>分组列 <select id="pivotBy"></select></label>
+      <label>统计列 <select id="pivotCol"></select></label>
+      <label>方式
+        <select id="pivotOp">
+          <option value="sum">求和</option>
+          <option value="count">计数</option>
+          <option value="avg">平均</option>
+          <option value="min">最小</option>
+          <option value="max">最大</option>
+        </select>
+      </label>
+      <button id="btnPivot" class="ghost" disabled>生成汇总</button>
+      <button id="btnPivotCSV" class="ghost" disabled>导出汇总</button>
+    </div>
+    <div id="pivotOut" class="tbl" style="display:none"></div>
+  </div>
+</div>
+
+<script src="./engine.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script>
+(function () {
+  const E = window.TableEngine || (typeof module !== "undefined" && module.exports);
+  const $ = (id) => document.getElementById(id);
+  let tables = [];      // {name, headers, rows}
+  let merged = null;    // {headers, rows}
+  let pivotTable = null;
+
+  function readFile(file) {
+    return new Promise((resolve) => {
+      const name = file.name.toLowerCase();
+      const fr = new FileReader();
+      if (name.endsWith(".csv") || name.endsWith(".txt")) {
+        fr.onload = () => {
+          try { resolve({ name: file.name, ...E.parseCSV(fr.result) }); }
+          catch (e) { resolve({ name: file.name, error: e.message }); }
+        };
+        fr.readAsText(file, "utf-8");
+      } else {
+        if (typeof XLSX === "undefined") {
+          resolve({ name: file.name, error: "无法解析 Excel（离线时未加载 SheetJS），请先另存为 CSV" });
+          return;
+        }
+        fr.onload = () => {
+          try {
+            const wb = XLSX.read(new Uint8Array(fr.result), { type: "array" });
+            const ws = wb.Sheets[wb.SheetNames[0]];
+            const aoa = XLSX.utils.sheet_to_json(ws, { header: 1, defval: "", raw: false });
+            const headers = (aoa.shift() || []).map(E.normalizeHeader);
+            resolve({ name: file.name + " [" + wb.SheetNames[0] + "]", headers, rows: aoa });
+          } catch (e) { resolve({ name: file.name, error: e.message }); }
+        };
+        fr.readAsArrayBuffer(file);
+      }
+    });
+  }
+
+  function renderFiles() {
+    const box = $("files");
+    box.innerHTML = tables.map((t) =>
+      "<div>" + (t.error ? "❌ " : "✅ ") + t.name +
+      (t.error ? " —— <span class='err'>" + t.error + "</span>"
+               : " —— " + t.rows.length + " 行 × " + t.headers.length + " 列")
+      + "</div>").join("");
+  }
+
+  function renderTable(el, t, limit) {
+    if (!t) { el.style.display = "none"; return; }
+    el.style.display = "block";
+    const head = "<tr>" + t.headers.map((h) => "<th>" + esc(h) + "</th>").join("") + "</tr>";
+    const body = t.rows.slice(0, limit).map((r) =>
+      "<tr>" + r.map((c) => "<td>" + esc(c) + "</td>").join("") + "</tr>").join("");
+    el.innerHTML = "<table>" + head + body + "</table>";
+  }
+  function esc(v) {
+    return String(v == null ? "" : v).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+  }
+
+  function download(filename, text, mime) {
+    const blob = new Blob([text], { type: mime || "text/csv;charset=utf-8" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = filename;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  }
+
+  async function addFiles(list) {
+    const got = await Promise.all(Array.from(list).map(readFile));
+    tables = tables.concat(got.filter((t) => !t.error));
+    const bad = got.filter((t) => t.error);
+    renderFiles();
+    $("msg").innerHTML = bad.length ? bad.map((b) => "<div class='err'>" + esc(b.name) + ": " + esc(b.error) + "</div>").join("") : "";
+  }
+
+  function build() {
+    if (!tables.length) { $("msg").textContent = "先加文件。"; return null; }
+    const applyClean = $("optClean").checked;
+    const applyNum = $("optNum").checked;
+    const merged0 = E.mergeTables(tables);
+    const warns = merged0.warnings || [];
+    let t = merged0;
+    t = applyClean || applyNum ? E.cleanTable(t, { coerceNumbers: applyNum }) : t;
+    let removedEmpty = 0;
+    if ($("optDropEmpty").checked) { const r = E.dropEmptyRows(t); t = r.table; removedEmpty = r.removed; }
+    let removedDup = 0;
+    const mode = $("optDedupe").value;
+    if (mode === "all") { const r = E.dedupeRows(t); t = r.table; removedDup = r.removed; }
+    else if (mode === "keys") {
+      const keys = $("dedupeKeys").value.split(",").map((s) => s.trim()).filter(Boolean);
+      if (!keys.length) { $("msg").textContent = "去重方式选了「按指定列」，但没填列名 —— 已跳过去重。"; }
+      else { const r = E.dedupeRows(t, keys); t = r.table; removedDup = r.removed; }
+    }
+    merged = t;
+    renderTable($("preview"), t, 200);
+    $("stat").textContent = "合并结果：" + t.rows.length + " 行 × " + t.headers.length + " 列"
+      + "（去空行 " + removedEmpty + " · 去重 " + removedDup + "）+ 预览最多显示 200 行";
+    $("btnCSV").disabled = false;
+    $("btnXLSX").disabled = false;
+    $("btnPivot").disabled = false;
+
+    // 字段数不匹配警报（真实数据最常见的「错位」病）
+    if (warns.length) {
+      const head = warns.slice(0, 10).map((w) =>
+        "　· " + esc(w.file) + " 第 " + w.row + " 行：拿到 " + w.got + " 列，表头是 " + w.expect + " 列"
+      ).join("<br>");
+      $("warn").innerHTML = "<div class='err'>⚠️ 发现 " + warns.length + " 行字段数对不上（可能被错位）：<br>" + head +
+        (warns.length > 10 ? "<br>　· …还有 " + (warns.length - 10) + " 行" : "") +
+        "<br>　建议：回原文件检查这些行是否有未加引号的逗号（如 3,000 应写成 \"3,000\"）。</div>";
+    } else {
+      $("warn").innerHTML = "<span class='prv'>✓ 字段数全部对齐，没有发现错位。</span>";
+    }
+
+    const bySel = $("pivotBy"), colSel = $("pivotCol");
+    bySel.innerHTML = t.headers.map((h) => "<option>" + esc(h) + "</option>").join("");
+    colSel.innerHTML = t.headers.map((h) => "<option>" + esc(h) + "</option>").join("");
+    return t;
+  }
+
+  // events
+  const drop = $("drop");
+  drop.onclick = () => $("file").click();
+  $("file").onchange = (e) => addFiles(e.target.files);
+  ["dragenter", "dragover"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add("on"); }));
+  ["dragleave", "drop"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove("on"); }));
+  drop.addEventListener("drop", (e) => { if (e.dataTransfer.files.length) addFiles(e.dataTransfer.files); });
+
+  $("btnMerge").onclick = build;
+  $("btnCSV").onclick = () => merged && download("merged.csv", "\uFEFF" + E.toCSV(merged));
+  $("btnXLSX").onclick = () => {
+    if (!merged) return;
+    if (typeof XLSX === "undefined") { $("msg").textContent = "离线状态无法导出 Excel，请用「导出 CSV」。"; return; }
+    const ws = XLSX.utils.aoa_to_sheet([merged.headers].concat(merged.rows));
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "合并结果");
+    XLSX.writeFile(wb, "merged.xlsx");
+  };
+  $("btnPivot").onclick = () => {
+    if (!merged) return;
+    try {
+      pivotTable = E.pivot(merged, $("pivotBy").value, [{ column: $("pivotCol").value, op: $("pivotOp").value }]);
+      renderTable($("pivotOut"), pivotTable, 200);
+      $("btnPivotCSV").disabled = false;
+    } catch (e) { $("msg").textContent = "汇总失败：" + e.message; }
+  };
+  $("btnPivotCSV").onclick = () => pivotTable && download("summary.csv", "\uFEFF" + E.toCSV(pivotTable));
+})();
+</script>
+</body>
+</html>
