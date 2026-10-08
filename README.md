@@ -6,6 +6,9 @@ A tiny, dependency-free toolkit that audits a backtest the way an accountant
 audits a ledger and a QA engineer audits a test suite. It does not sell you
 returns; it finds the four ways a backtest most often lies.
 
+> **回测审计 / 策略代码复核服务** — 一页说明与联系方式 → **[PORTFOLIO.md](PORTFOLIO.md)**
+> **Backtest audits · strategy-code review** — one-page overview → **[PORTFOLIO.md](PORTFOLIO.md)**
+
 ---
 
 ## English
