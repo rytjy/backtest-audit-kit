@@ -33,7 +33,7 @@ of opinions.
 script for each problem. ② A minimal fix patch. ③ A before/after reconciliation
 of the headline numbers (win rate, net PnL, multiple, MDD, t-stat).
 
-**Three sample cases** (full write-ups in `cases/`):
+**Sample cases** (full write-ups in `cases/`):
 
 1. **Look-ahead** — the exit scan ran on the entry bar, so every signal knew
    its outcome. Fixed: 91 trades / 90.1% / **+$214.37** → 26 trades / 65.4% /
@@ -49,6 +49,11 @@ of the headline numbers (win rate, net PnL, multiple, MDD, t-stat).
    written twice (breaker-local *and* raw).
    (*Bonus case 4:* 5-minute bar clustering inflated `n` ~11x and turned
    t = 15.60 into t = 1.75 after a 24h cooldown.)
+4. **Cost omission** (`cases/case5_cost_omission.md`) — a high-turnover 50x
+   book charged **no** fee, funding or slippage; its take-profit needed only a
+   **+0.08%** move while one round trip costs **0.10%**, so the target sat below
+   the toll and every win is a net loss. At the tool's default rates the omitted
+   cost ran **~5.7x the starting capital** and **~19x the reported profit**.
 
 **Install.**
 
@@ -101,7 +106,7 @@ profitable. No checker here predicts returns.
 **交付物承诺。** ① 按严重度排序的问题清单，每个问题配一个可运行的复现脚本。
 ② 最小修复补丁。③ 修复前后的对账数字（胜率 / 净利 / 倍数 / 回撤 / t 值）。
 
-**三个案例摘要**（完整写在 `cases/`）：
+**案例摘要**（完整写在 `cases/`）：
 
 1. **前视 bug** —— 出场扫描写在开仓 bar 的循环内，每个信号都提前知道结果。
    修复后：91 笔 / 90.1% / **+$214.37** → 26 笔 / 65.4% / **-$0.12**；tick 级
@@ -115,6 +120,7 @@ profitable. No checker here predicts returns.
    个百分点**。结论：MDD 必须双写（熔断口径 + 原始口径）。
    （**附赠案例 4**：一段暴跌连打十几根 5min bar 让样本量虚增约 11 倍，t 值从
    15.60 在 24h 冷却去重后掉到 1.75。）
+4. **成本漏算**（`cases/case5_cost_omission.md`）—— 一个高换手 50x 账本**完全没算**手续费/资金费/滑点；止盈只需价格动 **+0.08%**，而一趟往返 **0.10%** ⇒ 目标在成本之下，每笔赢单净亏。按默认费率，漏掉的成本约 **5.7× 本金**、**19× 账面收益**。
 
 **怎么跑。**
 
