@@ -50,6 +50,20 @@ of the headline numbers (win rate, net PnL, multiple, MDD, t-stat).
    (*Bonus case 4:* 5-minute bar clustering inflated `n` ~11x and turned
    t = 15.60 into t = 1.75 after a 24h cooldown.)
 
+**Install.**
+
+```bash
+pip install backtest-audit-kit
+```
+
+**Use it in code** (four checkers, pure standard library):
+
+```python
+from auditkit.checks import lookahead
+findings = lookahead.detect_file("strategy.py")   # future-data lint
+print(lookahead.format_findings(findings))
+```
+
 **How to run.**
 
 ```bash
