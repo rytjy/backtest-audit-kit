@@ -2,7 +2,8 @@
 """Reproduce Case 5 — cost omission: the gross profit that fees eat.
 
 A representative book of high-turnover, 50x round trips that recorded NO costs,
-charged against the toolkit's default venue rates.
+charged against the venue's real taker rate (4.5 bps/side), with funding and
+slippage at tool defaults.
 
     python3 cases/repro_cost_omission.py
 
@@ -22,7 +23,7 @@ NOTIONAL = 400.0
 N = 749
 LEV = 50.0
 TP_PCT_OF_MARGIN = 4.0      # take-profit, percent of margin
-FEE_BPS = 5.0               # taker, per side
+FEE_BPS = 4.5               # taker, per side (venue rate)
 ACCOUNT = 80.0
 
 BOOK = [
@@ -51,7 +52,7 @@ def main():
     total = fee + fund + slip
 
     print()
-    print("cost at default rates (fee 5bps/side, funding 1bp/bar, slippage 2bps/fill):")
+    print("cost at venue rate (fee 4.5bps/side); funding 1bp/bar + slippage 2bps/fill at tool default:")
     print("  fees     %8.1f" % fee)
     print("  funding  %8.1f" % fund)
     print("  slippage %8.1f" % slip)

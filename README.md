@@ -51,9 +51,10 @@ of the headline numbers (win rate, net PnL, multiple, MDD, t-stat).
    t = 15.60 into t = 1.75 after a 24h cooldown.)
 4. **Cost omission** (`cases/case5_cost_omission.md`) — a high-turnover 50x
    book charged **no** fee, funding or slippage; its take-profit needed only a
-   **+0.08%** move while one round trip costs **0.10%**, so the target sat below
-   the toll and every win is a net loss. At the tool's default rates the omitted
-   cost ran **~5.7x the starting capital** and **~19x the reported profit**.
+   **+0.08%** move while one round trip costs **0.09%** (the venue's real 4.5 bps
+   taker), so the target sat below the toll and every win is a net loss. At the
+   venue rate the omitted cost ran **~5.4x the starting capital** and **~17.8x the
+   reported profit**.
 
 **Install.**
 
@@ -120,7 +121,7 @@ profitable. No checker here predicts returns.
    个百分点**。结论：MDD 必须双写（熔断口径 + 原始口径）。
    （**附赠案例 4**：一段暴跌连打十几根 5min bar 让样本量虚增约 11 倍，t 值从
    15.60 在 24h 冷却去重后掉到 1.75。）
-4. **成本漏算**（`cases/case5_cost_omission.md`）—— 一个高换手 50x 账本**完全没算**手续费/资金费/滑点；止盈只需价格动 **+0.08%**，而一趟往返 **0.10%** ⇒ 目标在成本之下，每笔赢单净亏。按默认费率，漏掉的成本约 **5.7× 本金**、**19× 账面收益**。
+4. **成本漏算**（`cases/case5_cost_omission.md`）—— 一个高换手 50x 账本**完全没算**手续费/资金费/滑点；止盈只需价格动 **+0.08%**，而一趟往返 **0.09%**（场馆真实 4.5bps taker）⇒ 目标在成本之下，每笔赢单净亏。按场馆真实费率，漏掉的成本约 **5.4× 本金**、**17.8× 账面收益**。
 
 **怎么跑。**
 
