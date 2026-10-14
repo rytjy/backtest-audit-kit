@@ -26,6 +26,7 @@
 
 **公开记录**（每条都带 `文件:行号` + 覆盖率标签 + 明确的「未验证」）
 - 在开源代码库上提的**具体提问** 21 条 · **可复现发现** 1 条（tradedesk#179）
+- **被上游采纳的修复** 2 条：vectorbt #876 → 维护者 [PR #884](https://github.com/polakowo/vectorbt/pull/884) **已合并**（2026-10-14）· quantstats #571 → 贡献者 [PR #574](https://github.com/ranaroussi/quantstats/pull/574)（open）
 - **阴性结果**：两次读完全部在范围代码（100% SLOC）、零可交发现的复核
 - 全部见：github.com/rytjy
 
