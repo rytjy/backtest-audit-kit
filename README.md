@@ -8,6 +8,7 @@ returns; it finds the four ways a backtest most often lies.
 
 > **回测审计 / 策略代码复核服务** — 一页说明与联系方式 → **[PORTFOLIO.md](PORTFOLIO.md)**
 > **Backtest audits · strategy-code review** — one-page overview → **[PORTFOLIO.md](PORTFOLIO.md)**
+> **Price and scope** → **[SERVICE.md](SERVICE.md)**  ·  **价格与范围** → **[SERVICE.md](SERVICE.md)**
 
 ---
 
