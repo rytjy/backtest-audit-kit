@@ -56,6 +56,13 @@ of the headline numbers (win rate, net PnL, multiple, MDD, t-stat).
    venue rate the omitted cost ran **~5.4x the starting capital** and **~17.8x the
    reported profit**.
 
+5. **Numeric cancellation** (`cases/case6_numeric_cancellation.md`) — an
+   expanding R² on a perfectly linear series returned **0.14–0.69** instead of
+   **1.0**: raw `E[y²] − E[y]²` loses the variance to cancellation at large
+   offsets (24.7% variance error on a `100 + 1e-6*i` prefix; total collapse at
+   `1e10 + i`). Masking absolute `std ≈ 0` is not the fix — it also rejects
+   valid small-variance windows.
+
 **Install.**
 
 ```bash
@@ -122,6 +129,8 @@ profitable. No checker here predicts returns.
    （**附赠案例 4**：一段暴跌连打十几根 5min bar 让样本量虚增约 11 倍，t 值从
    15.60 在 24h 冷却去重后掉到 1.75。）
 4. **成本漏算**（`cases/case5_cost_omission.md`）—— 一个高换手 50x 账本**完全没算**手续费/资金费/滑点；止盈只需价格动 **+0.08%**，而一趟往返 **0.09%**（场馆真实 4.5bps taker）⇒ 目标在成本之下，每笔赢单净亏。按场馆真实费率，漏掉的成本约 **5.4× 本金**、**17.8× 账面收益**。
+
+5. **数值抵消**（`cases/case6_numeric_cancellation.md`）—— 完全线性的序列上，expanding R² 返回 **0.14–0.69** 而不是 **1.0**：原始 `E[y²] − E[y]²` 在大偏移下把方差抵消掉了（`100 + 1e-6*i` 前缀方差相对误差 **24.7%**；`1e10 + i` 直接塌掉）。加绝对 `std ≈ 0` 掩码不是修法——它会把有效的小方差窗口一起误杀。
 
 **怎么跑。**
 
