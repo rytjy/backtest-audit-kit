@@ -19,8 +19,10 @@ I check whether your backtest is lying to you. Not whether your strategy makes m
   numbers.
 
 - **On-chain yield check — same fixed price.** One public ERC4626 vault:
-  headline APY vs realized share-price growth over 7/30/90/180 days, with a
-  repro script. See `cases/case7_onchain_yield.md`.
+  headline APY vs realized share-price growth over 7/30/90/180 days. You get
+  **one page**: claim and source, method, four windows, a one-paragraph reading
+  of where the gap comes from, a one-command repro, and a scope box. 48 hours.
+  See `cases/case7_onchain_yield.md`.
 
 Price is quoted before I start. 48-hour rush: +50%.
 
