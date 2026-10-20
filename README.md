@@ -78,6 +78,10 @@ findings = lookahead.detect_file("strategy.py")   # future-data lint
 print(lookahead.format_findings(findings))
 ```
 
+**Public reception.** Accepted into
+[awesome-quant](https://github.com/wilsonfreitas/awesome-quant) (Trading &
+Backtesting) via PR #824, merged 2026-10-19.
+
 **How to run.**
 
 ```bash
@@ -132,6 +136,9 @@ profitable. No checker here predicts returns.
 4. **成本漏算**（`cases/case5_cost_omission.md`）—— 一个高换手 50x 账本**完全没算**手续费/资金费/滑点；止盈只需价格动 **+0.08%**，而一趟往返 **0.09%**（场馆真实 4.5bps taker）⇒ 目标在成本之下，每笔赢单净亏。按场馆真实费率，漏掉的成本约 **5.4× 本金**、**17.8× 账面收益**。
 
 5. **数值抵消**（`cases/case6_numeric_cancellation.md`）—— 完全线性的序列上，expanding R² 返回 **0.14–0.69** 而不是 **1.0**：原始 `E[y²] − E[y]²` 在大偏移下把方差抵消掉了（`100 + 1e-6*i` 前缀方差相对误差 **24.7%**；`1e10 + i` 直接塌掉）。加绝对 `std ≈ 0` 掩码不是修法——它会把有效的小方差窗口一起误杀。
+
+**公开收录。** 本仓库已进入 [awesome-quant](https://github.com/wilsonfreitas/awesome-quant)
+的 Trading & Backtesting 段（PR #824，2026-10-19 合并）。
 
 **怎么跑。**
 

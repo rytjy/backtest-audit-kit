@@ -35,6 +35,10 @@ reproducible problem. If it's useful, we continue; if not, we stop there.
   series returned **0.14–0.69** instead of **1.0**, from raw-moment cancellation.
   Silent, plausible, wrong.
 
+- **Independent listing** — `backtest-audit-kit` is listed in
+  [awesome-quant](https://github.com/wilsonfreitas/awesome-quant) under Trading &
+  Backtesting, accepted by its maintainer (PR #824, merged 2026-10-19).
+
 **Not offered** — no signals, no managed money, no profit promises, no access to
 funds or keys; no homework or thesis writing.
 
