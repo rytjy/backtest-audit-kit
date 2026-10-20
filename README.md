@@ -64,6 +64,13 @@ of the headline numbers (win rate, net PnL, multiple, MDD, t-stat).
    `1e10 + i`). Masking absolute `std ≈ 0` is not the fix — it also rejects
    valid small-variance windows.
 
+6. **On-chain yield** (`cases/case7_onchain_yield.md`) — two public ERC4626
+   vaults, same measurement. sUSDS: headline 3.80% vs realized 3.69% / 3.59%
+   (30 / 90 days). Yearn OG USDC: headline **8.44%** vs realized **6.52%** /
+   **6.04%**; 0.52 pp of the headline was token rewards that never entered the
+   share price. The gap has three measurable sources: point-in-time vs period,
+   rewards vs share price, gross vs net of fees.
+
 **Install.**
 
 ```bash
@@ -136,6 +143,8 @@ profitable. No checker here predicts returns.
 4. **成本漏算**（`cases/case5_cost_omission.md`）—— 一个高换手 50x 账本**完全没算**手续费/资金费/滑点；止盈只需价格动 **+0.08%**，而一趟往返 **0.09%**（场馆真实 4.5bps taker）⇒ 目标在成本之下，每笔赢单净亏。按场馆真实费率，漏掉的成本约 **5.4× 本金**、**17.8× 账面收益**。
 
 5. **数值抵消**（`cases/case6_numeric_cancellation.md`）—— 完全线性的序列上，expanding R² 返回 **0.14–0.69** 而不是 **1.0**：原始 `E[y²] − E[y]²` 在大偏移下把方差抵消掉了（`100 + 1e-6*i` 前缀方差相对误差 **24.7%**；`1e10 + i` 直接塌掉）。加绝对 `std ≈ 0` 掩码不是修法——它会把有效的小方差窗口一起误杀。
+
+6. **链上收益**（`cases/case7_onchain_yield.md`）—— 两个公开 ERC4626 金库，同一套测法。sUSDS：头条 3.80% vs 实现 3.69% / 3.59%（30 / 90 天）。Yearn OG USDC：头条 **8.44%** vs 实现 **6.52%** / **6.04%**；其中 0.52pp 是代币奖励，从不进份额价格。差距有三个可测来源：时点 vs 期间、奖励 vs 份额价格、毛 vs 净（费用）。
 
 **公开收录。** 本仓库已进入 [awesome-quant](https://github.com/wilsonfreitas/awesome-quant)
 的 Trading & Backtesting 段（PR #824，2026-10-19 合并）。

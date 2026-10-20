@@ -9,7 +9,7 @@ I check whether your backtest is lying to you. Not whether your strategy makes m
 3. A minimal patch where the fix is local
 4. Before/after numbers: win rate, net PnL, multiple, MDD, t-stat
 
-**Two ways to start**
+**Ways to start**
 
 - **One issue — ¥199 / $29 / 30 USDT (TRC20).** One concrete problem, 48 hours
   from a runnable repro: one page, a repro script, and a minimal patch where the
@@ -17,6 +17,10 @@ I check whether your backtest is lying to you. Not whether your strategy makes m
 - **Full audit — ¥300–800.** One strategy/backtest, ≤2,000 lines or one runnable
   notebook; 2–4 days. Ranked issue list, one repro per issue, and before/after
   numbers.
+
+- **On-chain yield check — same fixed price.** One public ERC4626 vault:
+  headline APY vs realized share-price growth over 7/30/90/180 days, with a
+  repro script. See `cases/case7_onchain_yield.md`.
 
 Price is quoted before I start. 48-hour rush: +50%.
 
@@ -38,6 +42,10 @@ reproducible problem. If it's useful, we continue; if not, we stop there.
 - **Independent listing** — `backtest-audit-kit` is listed in
   [awesome-quant](https://github.com/wilsonfreitas/awesome-quant) under Trading &
   Backtesting, accepted by its maintainer (PR #824, merged 2026-10-19).
+
+- `cases/case7_onchain_yield.md` — a public vault advertising **8.44%** net
+  paid **6.52%** over 30 days and **6.04%** over 90; **0.52 pp** was token
+  rewards that never entered the share price.
 
 **Not offered** — no signals, no managed money, no profit promises, no access to
 funds or keys; no homework or thesis writing.
