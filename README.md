@@ -9,6 +9,13 @@ returns; it finds the four ways a backtest most often lies.
 > **回测审计 / 策略代码复核服务** — 一页说明与联系方式 → **[PORTFOLIO.md](PORTFOLIO.md)**
 > **Backtest audits · strategy-code review** — one-page overview → **[PORTFOLIO.md](PORTFOLIO.md)**
 > **Price and scope** → **[SERVICE.md](SERVICE.md)**  ·  **价格与范围** → **[SERVICE.md](SERVICE.md)**
+>
+> **Need a second pair of eyes on one number?** Send the trade-by-trade rows and your
+> cost assumptions. In 48 hours you get a one-page finding, a repro script that prints
+> the same number, and a minimal patch where the fix is local. **¥199 / $29 per issue**;
+> if nothing reproducible turns up, you pay nothing.
+>
+> **想让人替你核一个数？** 把逐笔成交和你的成本假设发来，48 小时给你一页结论、一个能跑出同样数字的脚本、一处最小补丁。**¥199 / $29 一个问题**；查不出可复现的问题，不收钱。
 
 ---
 
