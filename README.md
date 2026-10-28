@@ -53,13 +53,13 @@ of the headline numbers (win rate, net PnL, multiple, MDD, t-stat).
    t = 15.60 into t = 1.75 after a 24h cooldown.)
 
 **Two more, both from auditing my own engine (2026-10-28).**
-\`cases/case8_label_semantics.md\` — a data migration turned a forward return into a
+`cases/case8_label_semantics.md` — a data migration turned a forward return into a
 *trailing* one, and four engines kept reading it as PnL: median 0x, then 1,760x
 after the fix, and neither number is an edge (intrabar liquidation at 5x leaves
 0.02x; half the events overlap, so serial compounding was fiction).
-\`cases/case9_backward_slice_false_positive.md\` — our own look-ahead checker
-reports a backward rolling window as \`HIGH\`; 18 of the 54 slice findings on our
-corpus were that shape. Repro: \`cases/repro_case9_backward_slice.py\`.
+`cases/case9_backward_slice_false_positive.md` — our own look-ahead checker
+reports a backward rolling window as `HIGH`; 18 of the 54 slice findings on our
+corpus were that shape. Repro: `cases/repro_case9_backward_slice.py`.
 
 **Install.**
 
@@ -130,13 +130,13 @@ profitable. No checker here predicts returns.
    15.60 在 24h 冷却去重后掉到 1.75。）
 
 **另外两个案例，都是审自己的引擎审出来的（2026-10-28）。**
-\`cases/case8_label_semantics.md\` —— 一次数据迁移把「未来 24h 收益」改成了
+`cases/case8_label_semantics.md` —— 一次数据迁移把「未来 24h 收益」改成了
 「过去 24h 收益」，四个引擎还在把它当盈亏：中位 0x，修好后 1,760x，而**这两个
 数都不是 edge**（5 倍加盘中强平只剩 0.02x；一半事件与他币重叠，串行满仓复利是
 虚构的）。
-\`cases/case9_backward_slice_false_positive.md\` —— 我们自己的前视检查器把**回看
-窗口**判成 \`HIGH\`；自家语料上 54 条 slice 告警里有 18 条是这个形状。复现：
-\`cases/repro_case9_backward_slice.py\`。
+`cases/case9_backward_slice_false_positive.md` —— 我们自己的前视检查器把**回看
+窗口**判成 `HIGH`；自家语料上 54 条 slice 告警里有 18 条是这个形状。复现：
+`cases/repro_case9_backward_slice.py`。
 
 **怎么跑。**
 
