@@ -102,14 +102,50 @@ def _is_negative_int(node: ast.AST) -> bool:
     return False
 
 
-def _adds_positive_int(node: ast.AST) -> bool:
-    """True iff ``node`` looks like ``<anchor> + k`` with ``k`` a positive int.
+_ANCHOR_NODES = (ast.Name, ast.Attribute, ast.Subscript)
 
-    A bare constant is *not* a match, so ``range(1, n)`` stays clean.
+
+def _is_anchorish(node: ast.AST) -> bool:
+    """True for expressions that plausibly name a bar index (not a constant)."""
+    return isinstance(node, _ANCHOR_NODES)
+
+
+def _anchor_offset(node: ast.AST) -> Optional[int]:
+    """Net integer offset of an ``<anchor> +/- k`` chain; None if not provable.
+
+    ``i + 1`` -> 1, ``i - 24`` -> -24, ``(i - n) + 1`` -> None: an unknown
+    amount is subtracted, so the window is not provably past the anchor.  A bare
+    constant returns None too, so ``range(1, n)`` stays clean.
     """
-    if isinstance(node, ast.BinOp) and isinstance(node.op, ast.Add):
-        return _is_positive_int(node.right) or _is_positive_int(node.left)
-    return False
+    if _is_anchorish(node):
+        return 0
+    if _is_int_const(node):
+        return None
+    if isinstance(node, ast.BinOp):
+        if isinstance(node.op, ast.Add):
+            left = _anchor_offset(node.left)
+            if left is not None and _is_int_const(node.right):
+                return left + node.right.value  # type: ignore[attr-defined]
+            right = _anchor_offset(node.right)
+            if right is not None and _is_int_const(node.left):
+                return right + node.left.value  # type: ignore[attr-defined]
+            return None
+        if isinstance(node.op, ast.Sub):
+            left = _anchor_offset(node.left)
+            if left is not None and _is_int_const(node.right):
+                return left - node.right.value  # type: ignore[attr-defined]
+            return None
+    return None
+
+
+def _adds_positive_int(node: ast.AST) -> bool:
+    """True iff ``node`` is provably *past* an anchor: ``<anchor> + k``, k > 0.
+
+    ``(i - n) + 1`` is **not** a match: that window still ends at or before the
+    anchor.  Reporting it was the false positive written up as case 9.
+    """
+    offset = _anchor_offset(node)
+    return offset is not None and offset > 0
 
 
 def _is_range_call(node: ast.AST) -> bool:
