@@ -177,3 +177,7 @@ python3 examples/run_demo.py            # 四个检查器全跑一遍
 - [`outpost/`](./outpost/) — 一个"只放能跑、能查、能被否证的东西"的据点：
   单文件表格整理工具（零依赖、离线自检 14 项）+ 一份**被自己推翻**的回测（做空山寨无 edge）
   + 一次"两条腿都断了"的数据源修复。不写客户名、不写"我能做什么"。
+
+- [audits/2026-10-28-collective2-calmar.md](./audits/2026-10-28-collective2-calmar.md) - 公开审计 · public audit:
+  四个 Collective2 策略页的 Calmar 一个都复算不出来（倍数 1.21-1.53x，不是固定口径差），利润因子 3/4 对得上、1 个差 14.8%。
+  附可复跑脚本 c2_page_check.py；不点任何卖家名、不声称对方造假。
