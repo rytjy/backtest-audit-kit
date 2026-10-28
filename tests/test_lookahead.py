@@ -44,6 +44,23 @@ class TestLookaheadDetection(unittest.TestCase):
             lookahead.detect("w = df['c'].iloc[i+1:]")[0].rule, "FUTURE_SLICE"
         )
 
+    def test_backward_window_with_plus_one_is_clean(self):
+        """Regression for case 9: ``(i - n) + 1`` ends at or before the anchor."""
+        src = (
+            "for i in range(n, len(c)):\n"
+            "    w = c[i-n+1:i+1]\n"
+            "    x = sum(w)\n"
+        )
+        self.assertEqual(
+            lookahead.detect(src), [], msg=lookahead.format_findings(lookahead.detect(src))
+        )
+        # a genuinely forward slice in the same loop must still be caught
+        fwd = "for i in range(n, len(c)):\n    w = c[i+1:i+5]\n"
+        self.assertEqual(lookahead.detect(fwd)[0].rule, "FUTURE_SLICE")
+        # a net-positive offset still counts: (i - 3) + 5 == i + 2
+        net = "for i in range(n, len(c)):\n    w = c[(i-3)+5:]\n"
+        self.assertEqual(lookahead.detect(net)[0].rule, "FUTURE_SLICE")
+
     def test_standalone_forward_loop_is_medium_not_high(self):
         src = "for j in range(i+1, n):\n    x = data[j]\n"
         findings = lookahead.detect(src)
