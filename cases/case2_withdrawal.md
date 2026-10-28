@@ -17,20 +17,33 @@ rule (the bust step must *carry* `wd_cum` forward, never reset it) and
 `WD_ACCRUAL` / `WD_MONOTONIC` as companions.
 
 **What the fix changed.** Make every exit path return the full state, including
-`wd_cum`.
+`wd_cum`. The bug is real: **ten** bust returns in this engine returned `0.0`
+and discarded both `wd_cum` and the remaining cash.
 
-| Configuration (2024–2026, same signals) | Reported multiple (buggy) | Reported multiple (fixed) |
-|---|---|---|
-| Withdrawal rule "double, keep half" (翻 2 留 1) | 7.82x | **215.27x** |
+**How big is it?** Measured by planting / removing that one line on the same
+engine and the same signals (2026-10-28 rerun, `bt_campaign_v2.py`):
 
-Comparing withdrawal-rule families ("翻 2 留 1" vs "翻 200 留 100") on the
-fixed engine, the reported multiple moves by roughly **27x** — i.e. the bug's
-size scales with how aggressively the strategy withdraws.
+| Config | Buggy | Fixed | Busts |
+|---|---|---|---|
+| lev 1.2 · 2024–26 · withdraw "double, keep half" | 7.82x | **7.82x** | 0 |
+| lev 1.2 · 2024–26 · no withdrawal | 215.27x | 215.27x | 0 |
+| lev 5 · 2021–26 · withdraw "double, keep half" | 0.00x | **5.97x** | 1 |
 
-**Bottom line.** The same configuration reported **7.82x** buggy and
-**215.27x** fixed — an understatement of about **27x**, purely because one
-return path lost a counter. The bug was invisible in equity-curve charts and
-only surfaced once the ledger invariants were asserted step by step.
+**An earlier version of this note paired the wrong two numbers.** `215.27x` is
+the **no-withdrawal** line of the same signals, not the fixed value of the
+withdrawal rule. At lev 1.2 the published run never busts, so the bug never
+fires and the number does not move at all (7.82x → 7.82x). At 5x, where the run
+busts, the bug is total: 0.00x reported against 5.97x with the fix.
+
+**Bottom line.** Two separate effects were conflated:
+* **withdrawal policy** — taking half out at every doubling costs ~27x of
+  compounding on this sample (215.27x → 7.82x). Correct arithmetic, not a bug;
+* **bust-path accounting** — worth 0x when nothing busts, and everything when
+  something does (0.00x vs 5.97x).
+
+The invariant is still worth asserting (`BUST_WD_CARRY`); the honest headline
+is "this bug silently zeroes any run that busts after a withdrawal", not
+"27x understatement".
 
 **How to reproduce.** `tests/test_invariants.py::test_catches_planted_violations`
 builds a ledger whose bust step drops `wd_cum` and asserts the violation fires;
