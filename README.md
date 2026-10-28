@@ -22,6 +22,7 @@ checkers for a trading backtest:
 | `checks/invariants.py` | Does the ledger obey accounting invariants? (equity identity, `wd_cum` carry, monotonic counters, non-negative balances) |
 | `checks/mutants.py` | Which bugs would your test suite *not* catch? (mutation testing; survivors = coverage blind spots) |
 | `checks/fees.py` | Are fees two-sided, funding charged per bar, and slippage counted once per fill? |
+| `checks/bust_revival.py` | After a ruin check, does the account get reset to 1% and keep trading? (see `cases/case10_bust_revival.md`) |
 
 **Who it is for.** Quant developers, prop-desk researchers, and anyone who has
 ever shipped a strategy that looked great in a notebook and died in
@@ -51,15 +52,6 @@ of the headline numbers (win rate, net PnL, multiple, MDD, t-stat).
    gap. Conclusion: MDD must be written twice (breaker-local *and* raw).
    (*Bonus case 4:* 5-minute bar clustering inflated `n` ~11x and turned
    t = 15.60 into t = 1.75 after a 24h cooldown.)
-
-**Two more, both from auditing my own engine (2026-10-28).**
-`cases/case8_label_semantics.md` — a data migration turned a forward return into a
-*trailing* one, and four engines kept reading it as PnL: median 0x, then 1,760x
-after the fix, and neither number is an edge (intrabar liquidation at 5x leaves
-0.02x; half the events overlap, so serial compounding was fiction).
-`cases/case9_backward_slice_false_positive.md` — our own look-ahead checker
-reports a backward rolling window as `HIGH`; 18 of the 54 slice findings on our
-corpus were that shape. Repro: `cases/repro_case9_backward_slice.py`.
 
 **Install.**
 
@@ -104,6 +96,7 @@ profitable. No checker here predicts returns.
 | `checks/invariants.py` | 账本是否满足会计不变量？（权益恒等式、`wd_cum` 结转、计数器单调、余额非负） |
 | `checks/mutants.py` | 你的测试套件**抓不到**哪些 bug？（变异测试；存活的变异体 = 覆盖盲区） |
 | `checks/fees.py` | 手续费是否双边计、资金费是否逐 bar 计、滑点是否每笔只算一次？ |
+| `checks/bust_revival.py` | 爆仓检查之后，账户是否被重置成 1% 继续交易？（见 `cases/case10_bust_revival.md`） |
 
 **给谁用。** 量化开发者、自营研究岗、以及任何"回测很美、实盘就死"过的
 人。带看别人的回测（或自己的）时，它给你的是**问题清单 + 复现脚本 + 修复前后
@@ -128,15 +121,6 @@ profitable. No checker here predicts returns.
    **53.1%**，**差 45.6 个百分点**。结论：MDD 必须双写（熔断口径 + 原始口径）。
    （**附赠案例 4**：一段暴跌连打十几根 5min bar 让样本量虚增约 11 倍，t 值从
    15.60 在 24h 冷却去重后掉到 1.75。）
-
-**另外两个案例，都是审自己的引擎审出来的（2026-10-28）。**
-`cases/case8_label_semantics.md` —— 一次数据迁移把「未来 24h 收益」改成了
-「过去 24h 收益」，四个引擎还在把它当盈亏：中位 0x，修好后 1,760x，而**这两个
-数都不是 edge**（5 倍加盘中强平只剩 0.02x；一半事件与他币重叠，串行满仓复利是
-虚构的）。
-`cases/case9_backward_slice_false_positive.md` —— 我们自己的前视检查器把**回看
-窗口**判成 `HIGH`；自家语料上 54 条 slice 告警里有 18 条是这个形状。复现：
-`cases/repro_case9_backward_slice.py`。
 
 **怎么跑。**
 
