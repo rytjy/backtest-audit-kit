@@ -15,7 +15,11 @@ returns; it finds the four ways a backtest most often lies.
 > the same number, and a minimal patch where the fix is local. **¥199 / $29 per issue**;
 > if nothing reproducible turns up, you pay nothing.
 >
+> **Start here** → [open an issue](https://github.com/rytjy/backtest-audit-kit/issues/new) with the repo link or the core file; one concrete, reproducible finding comes back first.
+>
 > **想让人替你核一个数？** 把逐笔成交和你的成本假设发来，48 小时给你一页结论、一个能跑出同样数字的脚本、一处最小补丁。**¥199 / $29 一个问题**；查不出可复现的问题，不收钱。
+>
+> **从这里开始** → [开一个 issue](https://github.com/rytjy/backtest-audit-kit/issues/new)：贴仓库链接或核心文件，先给你一条具体的、可复现的问题。
 
 ---
 
