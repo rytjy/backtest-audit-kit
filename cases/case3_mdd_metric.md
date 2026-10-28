@@ -21,9 +21,15 @@ modified by a control-flow event.
 
 | Metric | Value |
 |---|---|
-| Investor-view raw drawdown, full history (fixed) | **99.7%** |
+| Investor-view raw drawdown, full history (fixed) | **98.7%** |
 | Reported MDD (breaker-local, buggy) | **53.1%** |
-| Gap | **46 percentage points** |
+| Gap | **45.6 percentage points** |
+
+*Provenance.* Both numbers come from the same run — `trading_research/run_out/risk_gate_tests.txt`,
+lev 1.2, 2021: `MDD 53.1% | 原始MDD 98.7%`. An earlier version of this note
+quoted 99.7%, which is a **different** configuration (lev 1.2, breaker off,
+full history, `run_out/sens_odds_fix.txt`). The conclusion is unchanged; the
+pairing was wrong and is corrected here.
 
 **Bottom line.** The headline number hid a near-total loss. **MDD must be
 dual-written**: a control-flow variable may be reset, but the investor-facing
