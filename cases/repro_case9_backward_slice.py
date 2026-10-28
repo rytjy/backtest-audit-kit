@@ -1,10 +1,11 @@
-"""Reproduce Case 9: a backward rolling window is reported as a future slice.
+"""Regression check for Case 9: a backward rolling window is not a future leak.
+
+Before 2026-10-28 the checker reported `c[i-n+1:i+1]` (a window ending at `i`) as
+HIGH/FUTURE_SLICE. This script asserts the repaired behaviour and guards the
+genuinely forward shapes.
 
 Run from the repository root:
     python3 cases/repro_case9_backward_slice.py
-
-Expected: the in-loop backward window is HIGH/FUTURE_SLICE, the same window
-without "+1" is clean, and a genuine forward read is reported.
 """
 import os
 import sys
@@ -22,44 +23,45 @@ def rolling(c, n):
     return out
 '''
 
-BACKWARD_NO_PLUS_ONE = '''
-def rolling(c, n):
+FORWARD_SLICE_LOOP = '''
+def peek(c, n):
     out = []
     for i in range(n, len(c)):
-        w = c[i-n:i]              # ends at i-1
-        out.append(sum(w)/len(w))
+        w = c[i+1:i+5]            # starts after i
+        out.append(sum(w))
     return out
 '''
 
-FORWARD_READ = '''
-def peek(c, i):
-    for j in range(len(c)):
-        x = c[j+1]
-    return x
+NET_POSITIVE_OFFSET = '''
+def peek(c, n):
+    out = []
+    for i in range(n, len(c)):
+        w = c[(i-3)+5:]           # == i + 2
+        out.append(sum(w))
+    return out
 '''
 
 
-def show(name, source):
+def rules(name, source):
     findings = detect(source, name + ".py")
-    print(name)
-    for f in findings:
-        print("   [%s] %s L%d  %s" % (f.severity, f.rule, f.lineno, f.message))
-    if not findings:
-        print("   (no findings)")
+    print("%-22s %s" % (name, [(f.rule, f.severity) for f in findings] or "clean"))
     return findings
 
 
 def main():
-    backward = show("backward_loop", BACKWARD_LOOP)
-    clean = show("backward_without_plus_one", BACKWARD_NO_PLUS_ONE)
-    forward = show("forward_read", FORWARD_READ)
+    backward = rules("backward_loop", BACKWARD_LOOP)
+    forward = rules("forward_slice_loop", FORWARD_SLICE_LOOP)
+    net = rules("net_positive_offset", NET_POSITIVE_OFFSET)
 
-    flagged = [(f.rule, f.severity) for f in backward]
+    ok = (
+        backward == []
+        and [f.rule for f in forward] == ["FUTURE_SLICE"]
+        and [f.rule for f in net] == ["FUTURE_SLICE"]
+    )
     print()
-    print("backward window flagged HIGH:", ("FUTURE_SLICE", "HIGH") in flagged)
-    print("same window without +1 clean:", len(clean) == 0)
-    print("forward read still reported:", len(forward) > 0)
+    print("PASS" if ok else "FAIL")
+    return 0 if ok else 1
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
