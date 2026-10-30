@@ -58,3 +58,14 @@ Contact: open an issue on this repo, or WeChat (provided on request).
 and I write the scope down first, so you pay against a stated deliverable rather
 than a promise. If I find nothing reproducible, you pay nothing.
 
+**Payment terms** — three things, stated up front.
+
+1. **Scope before payment.** I send one short written note naming what I will
+   check, what you get, and what counts as "nothing reproducible". Work starts
+   after that note and the payment.
+2. **Delivery is the document.** One PDF by email, with a file list and a date.
+   That PDF is the deliverable.
+3. **Refunds.** Full refund if nothing is delivered, or if I find nothing
+   reproducible. No partial refunds — a result you do not find useful is a
+   judgement about the outcome, not a failure to deliver.
+
