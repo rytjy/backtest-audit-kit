@@ -30,3 +30,4 @@
 - 全部见：github.com/rytjy
 
 **联系**：gbbggjvf@gmail.com · GitHub：github.com/rytjy
+**付款**：PayPal → gbbggjvf@gmail.com（先报价、先给范围说明，再付款；查不出可复现问题不收钱）

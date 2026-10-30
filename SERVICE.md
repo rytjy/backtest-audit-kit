@@ -53,3 +53,8 @@ reproducible problem. If it's useful, we continue; if not, we stop there.
 funds or keys; no homework or thesis writing.
 
 Contact: open an issue on this repo, or WeChat (provided on request).
+
+**How to pay** — PayPal to `gbbggjvf@gmail.com`. Price is fixed before I start,
+and I write the scope down first, so you pay against a stated deliverable rather
+than a promise. If I find nothing reproducible, you pay nothing.
+
