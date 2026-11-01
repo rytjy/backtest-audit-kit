@@ -1,0 +1,130 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R >> >> /Contents 7 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Length 5928 >>
+stream
+BT /F2 18.00 Tf 56.00 783.89 Td (Verification report - live record, recomputed) Tj ET
+0.00 G 0.80 w 56.00 759.89 m 539.28 759.89 l S 0 G
+BT /F1 9.50 Tf 56.00 743.89 Td (Target: github.com/Lucas-Joly-GH/trends-research, public repo, live record 2026-01-02 to 2026-10-29) Tj ET
+BT /F1 9.50 Tf 56.00 730.89 Td (Sample deliverable. Public files only. No fee, no contact with the author.) Tj ET
+BT /F1 9.50 Tf 56.00 717.89 Td (Result: the published figures reproduce. Two labelling notes, no error found.) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 698.89 Td (METHOD) Tj ET
+0 0 0 rg
+BT /F1 9.50 Tf 56.00 686.89 Td (I downloaded the daily file the project publishes \(docs/data/history.json, 215 sessions\) and) Tj ET
+BT /F1 9.50 Tf 56.00 674.89 Td (recomputed every headline statistic from the equity series itself: window return, annualised return,) Tj ET
+BT /F1 9.50 Tf 56.00 662.89 Td (volatility, Sharpe, drawdown. Where a number did not match I read the publishing code before calling) Tj ET
+BT /F1 9.50 Tf 56.00 650.89 Td (it a discrepancy - twice that turned a suspected error into a convention difference.) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 628.89 Td (LINE BY LINE) Tj ET
+0 0 0 rg
+0.60 G 0.40 w 56.00 626.89 m 539.28 626.89 l S 0 G
+BT /F2 8.50 Tf 60.00 614.89 Td (Item) Tj ET
+BT /F2 8.50 Tf 210.00 614.89 Td (Published) Tj ET
+BT /F2 8.50 Tf 315.00 614.89 Td (Recomputed) Tj ET
+BT /F2 8.50 Tf 420.00 614.89 Td (Status) Tj ET
+0.60 G 0.40 w 56.00 609.89 m 539.28 609.89 l S 0 G
+BT /F1 9.20 Tf 60.00 593.89 Td (Window return) Tj ET
+BT /F1 9.20 Tf 210.00 593.89 Td (16.4329%) Tj ET
+BT /F1 9.20 Tf 315.00 593.89 Td (16.4329%) Tj ET
+BT /F1 9.20 Tf 420.00 593.89 Td (exact) Tj ET
+0.85 G 0.30 w 56.00 583.89 m 539.28 583.89 l S 0 G
+BT /F1 9.20 Tf 60.00 577.89 Td (Max drawdown) Tj ET
+BT /F1 9.20 Tf 210.00 577.89 Td (-5.6022%) Tj ET
+BT /F1 9.20 Tf 315.00 577.89 Td (-5.6022%) Tj ET
+BT /F1 9.20 Tf 420.00 577.89 Td (exact) Tj ET
+0.85 G 0.30 w 56.00 567.89 m 539.28 567.89 l S 0 G
+BT /F1 9.20 Tf 60.00 561.89 Td (Annualised vol) Tj ET
+BT /F1 9.20 Tf 210.00 561.89 Td (8.7169%) Tj ET
+BT /F1 9.20 Tf 315.00 561.89 Td (8.6905%) Tj ET
+BT /F1 9.20 Tf 420.00 561.89 Td (252 vs 256 days) Tj ET
+0.85 G 0.30 w 56.00 551.89 m 539.28 551.89 l S 0 G
+BT /F1 9.20 Tf 60.00 545.89 Td (Sharpe, as published) Tj ET
+BT /F1 9.20 Tf 210.00 545.89 Td (1.6981) Tj ET
+BT /F1 9.20 Tf 315.00 545.89 Td (1.68) Tj ET
+BT /F1 9.20 Tf 420.00 545.89 Td (matches after cash) Tj ET
+0.85 G 0.30 w 56.00 535.89 m 539.28 535.89 l S 0 G
+BT /F1 9.20 Tf 60.00 529.89 Td (Sharpe, raw equity) Tj ET
+BT /F1 9.20 Tf 210.00 529.89 Td (-) Tj ET
+BT /F1 9.20 Tf 315.00 529.89 Td (2.1056) Tj ET
+BT /F1 9.20 Tf 420.00 529.89 Td (gap = cash / vol) Tj ET
+0.85 G 0.30 w 56.00 519.89 m 539.28 519.89 l S 0 G
+BT /F1 9.20 Tf 60.00 513.89 Td (Geometric CAGR) Tj ET
+BT /F1 9.20 Tf 210.00 513.89 Td (19.8606%) Tj ET
+BT /F1 9.20 Tf 315.00 513.89 Td (19.62%) Tj ET
+BT /F1 9.20 Tf 420.00 513.89 Td (same convention) Tj ET
+0.85 G 0.30 w 56.00 503.89 m 539.28 503.89 l S 0 G
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 489.89 Td (READING) Tj ET
+0 0 0 rg
+BT /F1 9.50 Tf 56.00 477.89 Td (Return and drawdown reproduce to the last digit. The remaining gaps are conventions the code) Tj ET
+BT /F1 9.50 Tf 56.00 465.89 Td (documents, not errors: 252 versus 256 sessions per year, and subtracting the cash rate before) Tj ET
+BT /F1 9.50 Tf 56.00 453.89 Td (computing Sharpe \(3.70% / 8.69% = 0.43, and 2.106 - 0.43 = 1.68\). Two labelling notes are worth) Tj ET
+BT /F1 9.50 Tf 56.00 441.89 Td (fixing: the dashboard prints a 14.80% arithmetic annual return beside a 19.86% geometric CAGR without) Tj ET
+BT /F1 9.50 Tf 56.00 429.89 Td (saying which is which, and the README describes a ranking of all 45 signals while the shipped table) Tj ET
+BT /F1 9.50 Tf 56.00 417.89 Td (holds 30 rows.) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 399.89 Td (REPRODUCE) Tj ET
+0 0 0 rg
+BT /F3 8.20 Tf 56.00 387.89 Td (curl -s) Tj ET
+BT /F3 8.20 Tf 56.00 376.89 Td (https://raw.githubusercontent.com/Lucas-Joly-GH/trends-research/main/docs/data/history.json >) Tj ET
+BT /F3 8.20 Tf 56.00 365.89 Td (history.json) Tj ET
+BT /F3 8.20 Tf 56.00 354.89 Td (python3 recalc.py history.json # daily returns = equity[i]/equity[i-1]-1; vol = sd*sqrt\(252\);) Tj ET
+BT /F3 8.20 Tf 56.00 343.89 Td (drawdown = running peak to trough) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 324.89 Td (WHAT A PAID ENGAGEMENT INCLUDES) Tj ET
+0 0 0 rg
+BT /F1 9.50 Tf 56.00 312.89 Td (One strategy, repo or published track record. 48 hours. USD 29 flat, paid up front. If a number you) Tj ET
+BT /F1 9.50 Tf 56.00 300.89 Td (publish cannot be reproduced or cleared, you pay nothing. What you get is a page like this one: every) Tj ET
+BT /F1 9.50 Tf 56.00 288.89 Td (figure traced to a file you can re-run.) Tj ET
+0.93 g 56.00 195.89 483.28 75.00 re f 0 g
+0.300 0.300 0.300 rg
+BT /F2 8.00 Tf 64.00 256.89 Td (SCOPE AND LIMITS) Tj ET
+0 0 0 rg
+BT /F1 8.60 Tf 64.00 244.89 Td (Public files only. The private price panel and data layer are not shipped, so the 1990-2026 backtest cannot) Tj ET
+BT /F1 8.60 Tf 64.00 234.39 Td (be reproduced and is not assessed here.) Tj ET
+BT /F1 8.60 Tf 64.00 223.89 Td (This report checks that published numbers match the source file they claim to come from. It says nothing) Tj ET
+BT /F1 8.60 Tf 64.00 213.39 Td (about whether the strategy will keep working, and it is not investment advice.) Tj ET
+BT /F1 8.60 Tf 64.00 202.89 Td (This is the shape of a paid engagement: one page, every figure traced to a file the reader can re-run.) Tj ET
+BT /F1 9.50 Tf 56.00 175.89 Td (Sandrone - independent review, 2026-11-01) Tj ET
+0.450 0.450 0.450 rg
+BT /F1 8.50 Tf 449.28 175.89 Td (1 / 1) Tj ET
+0 0 0 rg
+0.80 G 0.30 w 56.00 36.00 m 539.28 36.00 l S 0 G
+0.450 0.450 0.450 rg
+BT /F1 7.50 Tf 56.00 24.00 Td (github.com/rytjy/backtest-audit-kit  |  sample deliverable  |  gbbggjvf@gmail.com) Tj ET
+0 0 0 rg
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000267 00000 n 
+0000000364 00000 n 
+0000000466 00000 n 
+0000000561 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+6541
+%%EOF

@@ -62,6 +62,8 @@ of the headline numbers (win rate, net PnL, multiple, MDD, t-stat).
 
 Full write-up: [audits/2026-11-01-two-public-cases.md](audits/2026-11-01-two-public-cases.md). Not paid work, and not a track record: 23 public threads opened, 7 answered (30%), 0 paid.
 
+**What a deliverable looks like** - [audits/2026-11-01-sample-verification-report.pdf](audits/2026-11-01-sample-verification-report.pdf). One page, on a public live record recomputed from its own daily file: six numbers side by side, two convention gaps explained, one command to re-run. That result was *no error found* - which is also a result.
+
 **Install.**
 
 ```bash
@@ -139,6 +141,8 @@ profitable. No checker here predicts returns.
 | [pineforge-engine #664](https://github.com/pineforge-4pass/pineforge-engine/issues/664) | 7,989 个 probe 里 341 个按宽 100 倍的 PnL 容差评分 | 认账；承诺 2026-11-04 前重跑全部 7,989 |
 
 完整文字：[audits/2026-11-01-two-public-cases.md](audits/2026-11-01-two-public-cases.md)。不是付费工作，也不是战绩：公开 23 条，7 条有回复（30%），付费 0。
+
+**交付物长什么样** —— [audits/2026-11-01-sample-verification-report.pdf](audits/2026-11-01-sample-verification-report.pdf)。一页纸，靶子是一份公开的实盘记录，用他本人发布的逐日文件复算：六个数字逐行对照，两处口径差异讲清楚，附一条可重跑的命令。那次结论是「未发现错误」——这也是结果。
 
 **怎么跑。**
 
