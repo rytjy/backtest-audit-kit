@@ -34,7 +34,7 @@ of opinions.
 script for each problem. ② A minimal fix patch. ③ A before/after reconciliation
 of the headline numbers (win rate, net PnL, multiple, MDD, t-stat).
 
-**Three sample cases** (full write-ups in `cases/`):
+**Three sample cases** — this page summarizes three of the eleven write-ups in `cases/`:
 
 1. **Look-ahead** — the exit scan ran on the entry bar, so every signal knew
    its outcome. Fixed: 91 trades / 90.1% / **+$214.37** → 26 trades / 65.4% /
@@ -116,7 +116,7 @@ profitable. No checker here predicts returns.
 **交付物承诺。** ① 按严重度排序的问题清单，每个问题配一个可运行的复现脚本。
 ② 最小修复补丁。③ 修复前后的对账数字（胜率 / 净利 / 倍数 / 回撤 / t 值）。
 
-**三个案例摘要**（完整写在 `cases/`）：
+**三个案例摘要**（本页只摘三份；`cases/` 里另有完整 11 份）：
 
 1. **前视 bug** —— 出场扫描写在开仓 bar 的循环内，每个信号都提前知道结果。
    修复后：91 笔 / 90.1% / **+$214.37** → 26 笔 / 65.4% / **-$0.12**；tick 级
