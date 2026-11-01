@@ -142,6 +142,8 @@ profitable. No checker here predicts returns.
 
 完整文字：[audits/2026-11-01-two-public-cases.md](audits/2026-11-01-two-public-cases.md)。不是付费工作，也不是战绩：公开 23 条，7 条有回复（30%），付费 0。
 
+**第三份，性质不同：读源码。** [APEX V2 [JOAT]](https://www.tradingview.com/script/b4EWZCPJ-APEX-V2-JOAT/)（开源 Pine，作者 JOAT）——不跑、不看净值，只把描述里的每个数字对回代码，查出六处对不上：面板上的 `8.0σ` 其实是 12 个标准差（分母带 `* 1.5`）；confluence 分母 9 但输入上限 7；九个票里有俩测的是同一个 VWAP 偏离；`Enable Trailing Stop` 默认开着却永远触发不了（`limit` 和 `trail_price` 同价）；`Risk Per Trade %` 算完没用（仓位走 `default_qty_value=100`）；`strategy()` 无手续费无滑点。每条都带行号，附 `sed` 复现命令：[`audits/2026-11-01-apex-v2-code-audit.md`](audits/2026-11-01-apex-v2-code-audit.md)。**没有对方回复** —— TradingView 脚本页没有评论区（页面 706KB 里 `comment` 只出现两次，全是数据字段；相关 API 全 404），所以这份是"结论"而不是"回合"。
+
 **交付物长什么样** —— [audits/2026-11-01-sample-verification-report.pdf](audits/2026-11-01-sample-verification-report.pdf)。一页纸，靶子是一份公开的实盘记录，用他本人发布的逐日文件复算：六个数字逐行对照，两处口径差异讲清楚，附一条可重跑的命令。那次结论是「未发现错误」——这也是结果。
 
 **怎么跑。**
