@@ -53,6 +53,15 @@ of the headline numbers (win rate, net PnL, multiple, MDD, t-stat).
    (*Bonus case 4:* 5-minute bar clustering inflated `n` ~11x and turned
    t = 15.60 into t = 1.75 after a 24h cooldown.)
 
+**Two public cases, both answered and followed by a change** — threads outside this repo; one-page PDF: [audits/2026-11-01-two-public-cases.pdf](audits/2026-11-01-two-public-cases.pdf).
+
+| Thread | The number I questioned | What happened |
+|---|---|---|
+| [mr-scrooge-v6 #9](https://github.com/BrockStar3540/mr-scrooge-v6/issues/9) | -$1,308.74 over 1,041 trades (t ~ -3.0) | accepted; ratchet re-tightened, config bug fixed (B-142 to B-145) |
+| [pineforge-engine #664](https://github.com/pineforge-4pass/pineforge-engine/issues/664) | 341 of 7,989 probes graded at a 100x wider PnL tolerance | accepted; regrade of all 7,989 due 2026-11-04 |
+
+Full write-up: [audits/2026-11-01-two-public-cases.md](audits/2026-11-01-two-public-cases.md). Not paid work, and not a track record: 23 public threads opened, 7 answered (30%), 0 paid.
+
 **Install.**
 
 ```bash
@@ -121,6 +130,15 @@ profitable. No checker here predicts returns.
    **53.1%**，**差 45.6 个百分点**。结论：MDD 必须双写（熔断口径 + 原始口径）。
    （**附赠案例 4**：一段暴跌连打十几根 5min bar 让样本量虚增约 11 倍，t 值从
    15.60 在 24h 冷却去重后掉到 1.75。）
+
+**两个公开案例（都在本仓库之外）** —— 对方认账并改了代码；一页 PDF：[audits/2026-11-01-two-public-cases.pdf](audits/2026-11-01-two-public-cases.pdf)。
+
+| 帖子 | 我质疑的数字 | 结果 |
+|---|---|---|
+| [mr-scrooge-v6 #9](https://github.com/BrockStar3540/mr-scrooge-v6/issues/9) | 1,041 笔合计 -$1,308.74（t ≈ -3.0） | 认账；收紧 ratchet，修掉配置加载 bug（B-142 至 B-145） |
+| [pineforge-engine #664](https://github.com/pineforge-4pass/pineforge-engine/issues/664) | 7,989 个 probe 里 341 个按宽 100 倍的 PnL 容差评分 | 认账；承诺 2026-11-04 前重跑全部 7,989 |
+
+完整文字：[audits/2026-11-01-two-public-cases.md](audits/2026-11-01-two-public-cases.md)。不是付费工作，也不是战绩：公开 23 条，7 条有回复（30%），付费 0。
 
 **怎么跑。**
 

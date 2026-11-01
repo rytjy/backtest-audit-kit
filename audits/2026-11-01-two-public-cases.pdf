@@ -1,0 +1,95 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R >> >> /Contents 7 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Length 3528 >>
+stream
+BT /F2 18.00 Tf 56.00 783.89 Td (Two findings: accepted, then the code changed) Tj ET
+0.00 G 0.80 w 56.00 759.89 m 539.28 759.89 l S 0 G
+BT /F1 9.50 Tf 56.00 743.89 Td (Independent public reviews of published backtest numbers, 2026-10-08 to 2026-11-01) Tj ET
+BT /F1 9.50 Tf 56.00 730.89 Td (2 cases. Both answered by the maintainer. Both followed by a change in their repo.) Tj ET
+BT /F1 9.50 Tf 56.00 717.89 Td (No engagement, no fee, no account access.) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 698.89 Td (METHOD) Tj ET
+0 0 0 rg
+BT /F1 9.50 Tf 56.00 686.89 Td (Each case opened with one number taken from the target's own published work, a way to reproduce it,) Tj ET
+BT /F1 9.50 Tf 56.00 674.89 Td (and a claim that could be checked against their data. Where the target pre-registered a prediction,) Tj ET
+BT /F1 9.50 Tf 56.00 662.89 Td (the order of prediction and result was checked before the result was read.) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 640.89 Td (WHAT CHANGED) Tj ET
+0 0 0 rg
+0.60 G 0.40 w 56.00 638.89 m 539.28 638.89 l S 0 G
+BT /F2 8.50 Tf 60.00 626.89 Td (Case) Tj ET
+BT /F2 8.50 Tf 170.00 626.89 Td (Claim) Tj ET
+BT /F2 8.50 Tf 420.00 626.89 Td (Outcome) Tj ET
+0.60 G 0.40 w 56.00 621.89 m 539.28 621.89 l S 0 G
+BT /F1 9.20 Tf 60.00 605.89 Td (mr-scrooge #9) Tj ET
+BT /F1 9.20 Tf 170.00 605.89 Td (Promotion bar did not scale with ~1,000 trials) Tj ET
+BT /F1 9.20 Tf 420.00 605.89 Td (ratchet + bug fixed) Tj ET
+0.85 G 0.30 w 56.00 595.89 m 539.28 595.89 l S 0 G
+BT /F1 9.20 Tf 60.00 589.89 Td (pineforge #664) Tj ET
+BT /F1 9.20 Tf 170.00 589.89 Td (341 of 7,989 probes at 100x PnL tolerance) Tj ET
+BT /F1 9.20 Tf 420.00 589.89 Td (regrade due Nov 4) Tj ET
+0.85 G 0.30 w 56.00 579.89 m 539.28 579.89 l S 0 G
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 565.89 Td (READING) Tj ET
+0 0 0 rg
+BT /F1 9.50 Tf 56.00 553.89 Td (Two threads, one number each: -$1,308.74 over 1,041 trades \(t ~ -3.0\), and 341 of 7,989 probes graded) Tj ET
+BT /F1 9.50 Tf 56.00 541.89 Td (at a 100x wider PnL tolerance. In both, the maintainer accepted the number; in both, the repository) Tj ET
+BT /F1 9.50 Tf 56.00 529.89 Td (changed within the same week. Neither case was billed.) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 511.89 Td (REPRODUCE) Tj ET
+0 0 0 rg
+BT /F3 8.20 Tf 56.00 499.89 Td (Case 1: github.com/pineforge-4pass/pineforge-engine/issues/664) Tj ET
+BT /F3 8.20 Tf 56.00 488.89 Td (Case 2: github.com/BrockStar3540/mr-scrooge-v6/issues/9) Tj ET
+BT /F3 8.20 Tf 56.00 477.89 Td (Scripts and outputs: github.com/rytjy/backtest-audit-kit/tree/main/audits) Tj ET
+0.93 g 56.00 383.89 483.28 75.00 re f 0 g
+0.300 0.300 0.300 rg
+BT /F2 8.00 Tf 64.00 444.89 Td (SCOPE AND LIMITS) Tj ET
+0 0 0 rg
+BT /F1 8.60 Tf 64.00 432.89 Td (Not paid work: no invoice in either case. One party states it does not buy audits; the other was never) Tj ET
+BT /F1 8.60 Tf 64.00 422.39 Td (asked.) Tj ET
+BT /F1 8.60 Tf 64.00 411.89 Td (Outcomes are the targets' own statements. The pineforge regrade is a commitment due 2026-11-04, not a) Tj ET
+BT /F1 8.60 Tf 64.00 401.39 Td (result.) Tj ET
+BT /F1 8.60 Tf 64.00 390.89 Td (Not a base rate: 23 public threads opened, 7 answered \(30%\), 0 paid.) Tj ET
+BT /F1 9.50 Tf 56.00 363.89 Td (rytjy) Tj ET
+0.450 0.450 0.450 rg
+BT /F1 8.50 Tf 449.28 363.89 Td (1 / 1) Tj ET
+0 0 0 rg
+0.80 G 0.30 w 56.00 36.00 m 539.28 36.00 l S 0 G
+0.450 0.450 0.450 rg
+BT /F1 7.50 Tf 56.00 24.00 Td (Full text: outreach/EVIDENCE_20261101/EVIDENCE.md  |  both threads public and unedited) Tj ET
+0 0 0 rg
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000267 00000 n 
+0000000364 00000 n 
+0000000466 00000 n 
+0000000561 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+4141
+%%EOF
