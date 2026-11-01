@@ -21,6 +21,9 @@ classifiers = [
 ]
 dependencies = []
 
+[project.scripts]
+auditkit = "auditkit.cli:main"
+
 [project.urls]
 Homepage = "https://github.com/rytjy/backtest-audit-kit"
 Repository = "https://github.com/rytjy/backtest-audit-kit"
