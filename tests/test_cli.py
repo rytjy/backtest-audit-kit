@@ -50,3 +50,34 @@ def test_json_mode_has_all_verdicts(tmp_path):
     r = _run(tmp_path, CLEAN, "--json", "--trials", "5")
     payload = _json.loads(r.stdout)
     assert set(payload["verdicts"]) == {"look-ahead", "multiple testing", "out-of-sample decay"}
+
+
+def test_timeframes_multiply_trials(tmp_path):
+    import json as _json
+    r = _run(tmp_path, CLEAN, "--json", "--trials", "10", "--timeframes", "5")
+    stats = _json.loads(r.stdout)["stats"]["multiple_testing"]
+    assert stats["trials"] == 10
+    assert stats["timeframes"] == 5
+    assert stats["trials_effective"] == 50
+    assert stats["multiscale_inflation"] is True
+
+
+def test_timeframes_shown_in_text_output(tmp_path):
+    r = _run(tmp_path, CLEAN, "--trials", "10", "--timeframes", "5")
+    assert "N_eff=50" in r.stdout
+    assert "5 个时间框架" in r.stdout
+
+
+def test_timeframes_default_is_neutral(tmp_path):
+    import json as _json
+    r = _run(tmp_path, CLEAN, "--json", "--trials", "10")
+    stats = _json.loads(r.stdout)["stats"]["multiple_testing"]
+    assert stats["timeframes"] == 1
+    assert stats["trials_effective"] == 10
+    assert stats["multiscale_inflation"] is False
+
+
+def test_timeframes_alone_stays_unverified(tmp_path):
+    r = _run(tmp_path, CLEAN, "--timeframes", "5")
+    assert "UNVERIFIED" in r.stdout
+    assert r.returncode == 2

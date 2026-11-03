@@ -21,8 +21,10 @@ pip install -e . && auditkit your.csv            # 或者装上，用 auditkit �
 | 检查 | 问的问题 | 什么时候红 |
 |---|---|---|
 | look-ahead | 时间戳和成交价物理上可能吗 | 时间戳倒退、entry==exit 零持有、入场价落在该 bar 的 high/low 之外 = FAIL |
-| multiple testing | 这个 Sharpe 能和「试了 N 次里最好的那次」分开吗 | 校正后 p ≥ 0.05 = FAIL（`--trials` 必须填你实际搜过的参数组数；不填则标 UNVERIFIED，不冒充通过） |
+| multiple testing | 这个 Sharpe 能和「试了 N 次里最好的那次」分开吗 | 校正后 p ≥ 0.05 = FAIL（`--trials` 必须填你实际搜过的参数组数；在多个时间框架上各调过参数，再加 `--timeframes N`，N_eff = trials × timeframes；不填则标 UNVERIFIED，不冒充通过） |
 | out-of-sample decay | 后半段还剩多少边 | 后半 SR ≤ 0 = FAIL，衰减 ≥ 50% = WARN |
+
+多尺度搜索会单独标一行：同一策略在 5 个时间框架上各调 100 组 = **N_eff 500**，门槛按 500 算；若按 100 会判 PASS、按 500 判 FAIL，会额外出一条 WARN 说明膨胀。
 
 退出码：`0` 全过 · `1` 有 FAIL · `2` 有缺输入判不了的项。加 `--ohlc bars.csv`（date, high, low）才能判价格级前视；`--json` 给机器读；`--split 0.6` 改样本内比例。
 
@@ -32,6 +34,8 @@ pip install -e . && auditkit your.csv            # 或者装上，用 auditkit �
 multiple-testing (deflated Sharpe), out-of-sample decay — from a plain CSV
 (`date` + `equity`, or `pnl` / `return`). Exit code 0 = pass, 1 = FAIL, 2 = needs input.
 Without `--trials` the multiple-testing line says UNVERIFIED instead of inventing a pass.
+Tuned the same grid on several time frames? Add `--timeframes N` — effective trials become
+`trials × N`, and the tool prints the inflated N and, when it flips the verdict, a WARN line.
 `--ohlc bars.csv` unlocks the price-level look-ahead check.
 
 ---

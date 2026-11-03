@@ -2,6 +2,7 @@
 
     python3 -m auditkit.cli trades.csv
     python3 -m auditkit.cli trades.csv --trials 200 --split 0.6
+    python3 -m auditkit.cli trades.csv --trials 20 --timeframes 5
     python3 -m auditkit.cli trades.csv --ohlc bars.csv --json
 
 Three questions, in the order that kills strategies:
@@ -253,26 +254,48 @@ def check_lookahead(series, ohlc_path=None):
     return findings
 
 
-def check_multiple_testing(returns, ppy, trials, ppy_note):
+def _mt_at(per, n, trials):
+    """Verdict for one trial count. Returns (verdict, threshold, p_adj, p_one)."""
+    z = per * math.sqrt(n)
+    p_one = 1.0 - normal_cdf(z)
+    if not trials or trials <= 1:
+        return None, None, None, p_one
+    p_adj = min(1.0, trials * p_one)
+    threshold = math.sqrt(2.0 * math.log(trials) / n)
+    return ("PASS" if p_adj < 0.05 else "FAIL"), threshold, p_adj, p_one
+
+
+def check_multiple_testing(returns, ppy, trials, ppy_note, timeframes=1):
     per, mean = sharpe_per_period(returns)
     if per is None:
         return [("NODATA", "收益序列太短或方差为 0，算不出 Sharpe")], {}
     n = len(returns)
-    z = per * math.sqrt(n)
-    p_one = 1.0 - normal_cdf(z)
-    if trials and trials > 1:
-        p_adj = min(1.0, trials * p_one)
-        threshold = math.sqrt(2.0 * math.log(trials) / n)
-        verdict = "PASS" if p_adj < 0.05 else "FAIL"
-        if verdict == "PASS":
-            msg = "每期 SR %.2f > 门槛 %.2f（N=%d，校正后 p=%.2g）—— 越过「最好的一次尝试」线" % (per, threshold, trials, p_adj)
-        else:
-            msg = "每期 SR %.2f < 门槛 %.2f（N=%d，校正后 p=%.2g）—— 与「试了 N 次里最好的那次」不可区分" % (per, threshold, trials, p_adj)
-        findings = [(verdict, msg)]
-    else:
+    tf = max(1, int(timeframes or 1))
+    n_eff = trials * tf if trials else None
+    verdict, threshold, p_adj, p_one = _mt_at(per, n, n_eff)
+    if verdict is None:
         p_adj = None
         threshold = None
-        findings = [("UNVERIFIED", "没给 --trials：未做多重检验校正（每期 SR %.2f，单次 p=%.2g）；参数网格搜过 N 组就填 N" % (per, p_one))]
+        msg = "没给 --trials：未做多重检验校正（每期 SR %.2f，单次 p=%.2g）；参数网格搜过 N 组就填 N" % (per, p_one)
+        if tf > 1:
+            msg += "，再乘以 --timeframes %d（你现在只给了时间框架数）" % tf
+        findings = [("UNVERIFIED", msg)]
+    else:
+        if tf > 1:
+            msg = "每期 SR %.2f %s 门槛 %.2f（N_eff=%d = 你报的 %d 组 × %d 个时间框架，校正后 p=%.2g）—— %s" % (
+                per, ">" if verdict == "PASS" else "<", threshold, n_eff, trials, tf, p_adj,
+                "越过「最好的一次尝试」线" if verdict == "PASS" else "与「试了 N_eff 次里最好的那次」不可区分",
+            )
+        elif verdict == "PASS":
+            msg = "每期 SR %.2f > 门槛 %.2f（N=%d，校正后 p=%.2g）—— 越过「最好的一次尝试」线" % (per, threshold, n_eff, p_adj)
+        else:
+            msg = "每期 SR %.2f < 门槛 %.2f（N=%d，校正后 p=%.2g）—— 与「试了 N 次里最好的那次」不可区分" % (per, threshold, n_eff, p_adj)
+        findings = [(verdict, msg)]
+        if tf > 1 and trials and trials > 1:
+            v_rep, thr_rep, p_rep, _ = _mt_at(per, n, trials)
+            if v_rep != verdict:
+                findings.append(("WARN", "多尺度搜索膨胀：只按 N=%d 判 %s（门槛 %.2f），把 %d 个时间框架计入后判 %s（门槛 %.2f）—— 每个时间框架上的参数也是一次搜索。" % (
+                    trials, v_rep, thr_rep, tf, verdict, threshold)))
     extra = {
         "sharpe_per_period": per,
         "sharpe_annual": per * math.sqrt(ppy),
@@ -282,6 +305,9 @@ def check_multiple_testing(returns, ppy, trials, ppy_note):
         "p_adjusted": p_adj,
         "threshold_per_period": threshold,
         "trials": trials,
+        "timeframes": tf,
+        "trials_effective": n_eff,
+        "multiscale_inflation": bool(tf > 1 and trials and trials > 1),
     }
     return findings, extra
 
@@ -334,6 +360,7 @@ def main(argv=None):
     ap.add_argument("csv", help="trades or equity CSV")
     ap.add_argument("--ohlc", help="optional bars CSV with date, high, low")
     ap.add_argument("--trials", type=int, default=None, help="how many parameter combos you searched (N)")
+    ap.add_argument("--timeframes", type=int, default=1, help="how many time frames you tuned the grid on; multiplies --trials (default 1)")
     ap.add_argument("--split", type=float, default=0.5, help="in-sample fraction (default 0.5)")
     ap.add_argument("--initial", type=float, default=10000.0, help="initial capital if only pnl is present")
     ap.add_argument("--json", action="store_true", help="machine-readable output")
@@ -352,7 +379,9 @@ def main(argv=None):
     ppy, ppy_note = infer_ppy(stamps)
 
     la = check_lookahead(series, args.ohlc)
-    mt, mt_extra = check_multiple_testing(returns, ppy, args.trials, ppy_note)
+    if args.timeframes < 1:
+        ap.error("--timeframes must be >= 1")
+    mt, mt_extra = check_multiple_testing(returns, ppy, args.trials, ppy_note, args.timeframes)
     oos, oos_extra = check_oos(returns, args.split, ppy)
 
     blocks = [("look-ahead", la), ("multiple testing", mt), ("out-of-sample decay", oos)]
