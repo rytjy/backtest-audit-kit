@@ -1,0 +1,100 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R >> >> /Contents 7 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Length 3681 >>
+stream
+BT /F2 18.00 Tf 56.00 783.89 Td (Multi-scale search is still search) Tj ET
+0.00 G 0.80 w 56.00 759.89 m 539.28 759.89 l S 0 G
+BT /F1 9.50 Tf 56.00 743.89 Td (Effective trials = N x k, not N   -   the frame axis spends significance too) Tj ET
+BT /F1 9.50 Tf 56.00 730.89 Td (auditkit v0.2.0  -  2026-11-03  -  MIT) Tj ET
+BT /F1 9.50 Tf 56.00 717.89 Td (Scope: a count of what you looked at, not proof that the edge is fake) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 698.89 Td (METHOD) Tj ET
+0 0 0 rg
+BT /F1 9.50 Tf 56.00 686.89 Td (The deflated-Sharpe bar is a best-of-N bar: it asks whether this Sharpe beats the best of N tries. If) Tj ET
+BT /F1 9.50 Tf 56.00 674.89 Td (you tuned the same grid on k time frames, every frame is another try. The bar grows like sqrt\(2 ln) Tj ET
+BT /F1 9.50 Tf 56.00 662.89 Td (N_eff / T\), so the honest count is N_eff = N x k.) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 640.89 Td (WORKED EXAMPLE  -  T = 400 periods, per-period Sharpe 0.11) Tj ET
+0 0 0 rg
+0.60 G 0.40 w 56.00 638.89 m 539.28 638.89 l S 0 G
+BT /F2 8.50 Tf 60.00 626.89 Td (Trial bookkeeping) Tj ET
+BT /F2 8.50 Tf 210.00 626.89 Td (N) Tj ET
+BT /F2 8.50 Tf 250.00 626.89 Td (Bar) Tj ET
+BT /F2 8.50 Tf 310.00 626.89 Td (Adj. p) Tj ET
+BT /F2 8.50 Tf 380.00 626.89 Td (Verdict) Tj ET
+0.60 G 0.40 w 56.00 621.89 m 539.28 621.89 l S 0 G
+BT /F1 9.20 Tf 60.00 605.89 Td (2 configs, one frame) Tj ET
+BT /F1 9.20 Tf 210.00 605.89 Td (2) Tj ET
+BT /F1 9.20 Tf 250.00 605.89 Td (0.059) Tj ET
+BT /F1 9.20 Tf 310.00 605.89 Td (0.028) Tj ET
+BT /F1 9.20 Tf 380.00 605.89 Td (PASS) Tj ET
+0.85 G 0.30 w 56.00 595.89 m 539.28 595.89 l S 0 G
+BT /F1 9.20 Tf 60.00 589.89 Td (2 configs x 10 frames) Tj ET
+BT /F1 9.20 Tf 210.00 589.89 Td (20) Tj ET
+BT /F1 9.20 Tf 250.00 589.89 Td (0.122) Tj ET
+BT /F1 9.20 Tf 310.00 589.89 Td (0.28) Tj ET
+BT /F1 9.20 Tf 380.00 589.89 Td (FAIL) Tj ET
+0.85 G 0.30 w 56.00 579.89 m 539.28 579.89 l S 0 G
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 565.89 Td (READING) Tj ET
+0 0 0 rg
+BT /F1 9.50 Tf 56.00 553.89 Td (The strategy did not change. Only the count of things you looked at changed. If the frame was) Tj ET
+BT /F1 9.50 Tf 56.00 541.89 Td (pre-registered - chosen before you saw the data - then k = 1 and nothing is added. The rule counts) Tj ET
+BT /F1 9.50 Tf 56.00 529.89 Td (searches, not mentions of time.) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 511.89 Td (REPRODUCE) Tj ET
+0 0 0 rg
+BT /F3 8.20 Tf 56.00 499.89 Td (python3 -m auditkit.cli trades.csv --trials 100 --timeframes 5 JSON adds timeframes,) Tj ET
+BT /F3 8.20 Tf 56.00 488.89 Td (trials_effective, multiscale_inflation.) Tj ET
+0.93 g 56.00 394.89 483.28 75.00 re f 0 g
+0.300 0.300 0.300 rg
+BT /F2 8.00 Tf 64.00 455.89 Td (SCOPE AND LIMITS) Tj ET
+0 0 0 rg
+BT /F1 8.60 Tf 64.00 443.89 Td (Frames on the same price series are correlated, so N x k overstates the number of independent trials. We) Tj ET
+BT /F1 8.60 Tf 64.00 433.39 Td (report the auditable count, not the flattering one.) Tj ET
+BT /F1 8.60 Tf 64.00 422.89 Td (Inherits the assumptions of the underlying check: i.i.d. periods, normal approximation, Sharpe as the) Tj ET
+BT /F1 8.60 Tf 64.00 412.39 Td (summary statistic.) Tj ET
+BT /F1 8.60 Tf 64.00 401.89 Td (Does not detect the case where frames were selected after seeing results - only you can report that.) Tj ET
+BT /F1 9.50 Tf 56.00 374.89 Td (rytjy  |  github.com/rytjy/backtest-audit-kit) Tj ET
+0.450 0.450 0.450 rg
+BT /F1 8.50 Tf 449.28 374.89 Td (1 / 1) Tj ET
+0 0 0 rg
+0.80 G 0.30 w 56.00 36.00 m 539.28 36.00 l S 0 G
+0.450 0.450 0.450 rg
+BT /F1 7.50 Tf 56.00 24.00 Td (github.com/rytjy/backtest-audit-kit  |  method: cases/case7_onchain_yield.md) Tj ET
+0 0 0 rg
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000267 00000 n 
+0000000364 00000 n 
+0000000466 00000 n 
+0000000561 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+4294
+%%EOF
