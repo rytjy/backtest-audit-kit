@@ -63,7 +63,9 @@ of opinions.
 script for each problem. ② A minimal fix patch. ③ A before/after reconciliation
 of the headline numbers (win rate, net PnL, multiple, MDD, t-stat).
 
-**Three sample cases** — this page summarizes three of the eleven write-ups in `cases/`:
+**Three sample cases** — this page summarizes three of the twelve write-ups in `cases/`:
+
+New: [Case 12 — the same 333 trades, three verdicts](audits/2026-11-04-case12-multiscale.md). One trade list, one data file; it passes `--trials 20 --timeframes 1` (p=0.024) and fails the same line with `--timeframes 5` (N_eff=100, p=0.12). The third block counts the search we actually ran, 576 configurations, and fails on a single time frame. Three outputs, one screen, nothing hidden.
 
 1. **Look-ahead** — the exit scan ran on the entry bar, so every signal knew
    its outcome. Fixed: 91 trades / 90.1% / **+$214.37** → 26 trades / 65.4% /
@@ -145,7 +147,9 @@ profitable. No checker here predicts returns.
 **交付物承诺。** ① 按严重度排序的问题清单，每个问题配一个可运行的复现脚本。
 ② 最小修复补丁。③ 修复前后的对账数字（胜率 / 净利 / 倍数 / 回撤 / t 值）。
 
-**三个案例摘要**（本页只摘三份；`cases/` 里另有完整 11 份）：
+**三个案例摘要**（本页只摘三份；`cases/` 里另有完整 12 份）：
+
+新增：[案例 12 —— 同一份 333 笔交易，三种判决](audits/2026-11-04-case12-multiscale.md)。一份交易表、一份数据：`--trials 20 --timeframes 1` 判 PASS（p=0.024），同一行加 `--timeframes 5` 判 FAIL（N_eff=100，p=0.12）；第三块按我们实际扫过的 576 组算，单时间框架就 FAIL。三段输出同页，不藏的。
 
 1. **前视 bug** —— 出场扫描写在开仓 bar 的循环内，每个信号都提前知道结果。
    修复后：91 笔 / 90.1% / **+$214.37** → 26 笔 / 65.4% / **-$0.12**；tick 级
