@@ -63,7 +63,9 @@ of opinions.
 script for each problem. ② A minimal fix patch. ③ A before/after reconciliation
 of the headline numbers (win rate, net PnL, multiple, MDD, t-stat).
 
-**Three sample cases** — this page summarizes three of the twelve write-ups in `cases/`:
+**Three sample cases** — this page summarizes three of the thirteen write-ups in `cases/`:
+
+New: [Case 13 — half the tickers, twice the PBO](audits/2026-11-06-case13-half-data-pbo.md). A retraction: I published PBO 73.33% against a README claim of 20%, but the run had loaded 63 of 75 tickers — the missing 12 shifted every cross-sectional rank. Full universe gives 46.67% / 26.67%, matching the maintainer. Same commit, same scripts; only the loaded count changed.
 
 New: [Case 12 — the same 333 trades, three verdicts](audits/2026-11-04-case12-multiscale.md). One trade list, one data file; it passes `--trials 20 --timeframes 1` (p=0.024) and fails the same line with `--timeframes 5` (N_eff=100, p=0.12). The third block counts the search we actually ran, 576 configurations, and fails on a single time frame. Three outputs, one screen, nothing hidden.
 
@@ -147,7 +149,9 @@ profitable. No checker here predicts returns.
 **交付物承诺。** ① 按严重度排序的问题清单，每个问题配一个可运行的复现脚本。
 ② 最小修复补丁。③ 修复前后的对账数字（胜率 / 净利 / 倍数 / 回撤 / t 值）。
 
-**三个案例摘要**（本页只摘三份；`cases/` 里另有完整 12 份）：
+**三个案例摘要**（本页只摘三份；`cases/` 里另有完整 13 份）：
+
+新增：[案例 13 —— 半套票，双倍 PBO](audits/2026-11-06-case13-half-data-pbo.md)。一次**撤回**：我曾公布 PBO 73.33%（README 写 20%），但那次只加载了 75 只里的 63 只 —— 缺的 12 只改变了所有截面排名。满 75/75 复算是 46.67% / 26.67%，与维护者一致。同一 commit、同一脚本，只有加载数不同。
 
 新增：[案例 12 —— 同一份 333 笔交易，三种判决](audits/2026-11-04-case12-multiscale.md)。一份交易表、一份数据：`--trials 20 --timeframes 1` 判 PASS（p=0.024），同一行加 `--timeframes 5` 判 FAIL（N_eff=100，p=0.12）；第三块按我们实际扫过的 576 组算，单时间框架就 FAIL。三段输出同页，不藏的。
 
