@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.2.3 — 2026-11-07
+
+**Docs only. No code change.**
+
+- The offer and the price now sit in the README itself: one path, one written report, 48 hours, ¥199 / $29, no reproducible finding no fee, plus a contact address.
+- Reason: the PyPI long description *is* this README, and relative links (`PORTFOLIO.md`) do not resolve on a PyPI page. A reader arriving from `pip install` could not see a price or an address at all.
+
 ## v0.2.2 — 2026-11-07
 
 **Two new checks for metric and funding accounting.**
