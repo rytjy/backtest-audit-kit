@@ -31,6 +31,11 @@
 
 The honest question is not "is the math wrong" but "how much of this return is one month, how short is the record, and does the drawdown match the annual figure". Flags point at where a buyer should ask; a clean result is still a result.
 
+## Coverage and the denominator
+
+- **Coverage**: 36 of 37 pages are live and complete (monthly cells printed for every month of the record). One page (124293346) has 89 monthly cells, all zero - 100% coverage, and the number means "inactive", not "flat". Every aggregate needs both a coverage count and a live/dead marker, because a missing cell never errors: in a sum it becomes 0, in a product 1.0, in a count it is skipped.
+- **Denominator**: the eligible set here is the 37 ids the leaderboard publishes. That is already a selection - strategies that disappeared are not recoverable from public pages, so this report cannot measure survival bias beyond the published set. What it can do is put the featured example next to the median of the set (19 of 36 carry more than 70% of their log return in the best three months; 14 carry no flag).
+
 ## Scope and limits
 
 - The leaderboard is a selection: it shows the winners. Nothing here measures the strategies that disappeared.
