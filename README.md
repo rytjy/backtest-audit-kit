@@ -6,8 +6,13 @@ A tiny, dependency-free toolkit that audits a backtest the way an accountant
 audits a ledger and a QA engineer audits a test suite. It does not sell you
 returns; it finds the four ways a backtest most often lies.
 
-> **回测审计 / 策略代码复核服务** — 一页说明与联系方式 → **[PORTFOLIO.md](PORTFOLIO.md)**
-> **Backtest audits · strategy-code review** — one-page overview → **[PORTFOLIO.md](PORTFOLIO.md)**
+> **回测审计 / 策略代码复核** — 一条路径，一份书面报告，48 小时。
+> **¥199 / $29**，查不出可复现的问题不收钱。给我一份交易 CSV、一段回测脚本、或一个引擎文件都行。
+> 详情与边界 → [PORTFOLIO.md](PORTFOLIO.md) · 邮箱 **gbbggjvf@gmail.com**
+>
+> **Backtest audit / strategy-code review** — one path, one written report, 48 hours.
+> **¥199 / $29**, no reproducible finding, no fee. Send a trade CSV, a backtest script, or one engine file.
+> Scope and limits → [PORTFOLIO.md](PORTFOLIO.md) · **gbbggjvf@gmail.com**
 
 ## 一条命令（3 分钟）
 
