@@ -63,7 +63,9 @@ of opinions.
 script for each problem. ② A minimal fix patch. ③ A before/after reconciliation
 of the headline numbers (win rate, net PnL, multiple, MDD, t-stat).
 
-**Three sample cases** — this page summarizes three of the fourteen write-ups in `cases/`:
+**Three sample cases** — this page summarizes three of the fifteen write-ups in `cases/`:
+
+New: [Case 15 — a +90.2% annualised claim, recomputed](cases/case15_c2_hypothetical_annualized.md). The monthly cells do compound to 90.2%, but the figure is hypothetical (the vendor's own disclaimer), three months carry it (remove them → 34.8%), and monthly peak-to-trough is −21.8%. Arithmetic consistent; not an audited real-money return.
 
 New: [Case 14 — a peer audit of a live account](audits/2026-11-06-case14-peer-audit-live-account.md). 1,701 setups → median DSR 0.00, PBO 0.03–0.19; 1,041 live trades → −$1,308.74 realized, 78.29% win rate against an 83.47% break-even, and a $131.44 equity gap that turned out to be financing (plus $979.82 of spread). Owner's permission to name him is quoted in the file.
 
@@ -151,7 +153,9 @@ profitable. No checker here predicts returns.
 **交付物承诺。** ① 按严重度排序的问题清单，每个问题配一个可运行的复现脚本。
 ② 最小修复补丁。③ 修复前后的对账数字（胜率 / 净利 / 倍数 / 回撤 / t 值）。
 
-**三个案例摘要**（本页只摘三份；`cases/` 里另有完整 14 份）：
+**三个案例摘要**（本页只摘三份；`cases/` 里另有完整 15 份）：
+
+新增：[案例 15 —— 复算一个 +90.2% 的年化](cases/case15_c2_hypothetical_annualized.md)。月度格子复利确实得到 90.2%，但该数是 hypothetical（C2 自己的免责声明），且由最大的三个月撑起（去掉后 → 34.8%），月度收盘最大回撤 −21.8%。算术自洽，但不是可审计的实盘收益。
 
 新增：[案例 14 —— 一个实盘账户的同行审计](audits/2026-11-06-case14-peer-audit-live-account.md)。1,701 个假设 → 中位 DSR 0.00、PBO 0.03–0.19；1,041 笔实盘 → 已实现 −$1,308.74、胜率 78.29% 对盈亏平衡所需的 83.47%，以及一笔 $131.44 的权益缺口（最终是隔夜融资，另有 $979.82 点差）。Owner 同意署名的原话在文内。
 
