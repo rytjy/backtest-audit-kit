@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.2.5 - 2026-11-07
+
+**Docs only. No code change.**
+
+- Second public sample: a whole-leaderboard pass - 37 public Collective2 strategies screened in one run. The platform's arithmetic reconciles within 0.4pp; what varies is concentration (19 of 36 carry >70% of their log return in the best three months), return/drawdown ratio (11), record length (11) and edge vs break-even (3). One page plus the parsed table.
+- Linked from the offer block in the README, so the PyPI page shows it too.
+
 ## v0.2.4 — 2026-11-07
 
 **Docs only.**
