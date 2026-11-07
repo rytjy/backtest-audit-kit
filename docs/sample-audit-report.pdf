@@ -1,0 +1,111 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R >> >> /Contents 7 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Length 5187 >>
+stream
+BT /F2 18.00 Tf 56.00 783.89 Td (Sample audit report - one engine path) Tj ET
+0.00 G 0.80 w 56.00 759.89 m 539.28 759.89 l S 0 G
+BT /F1 9.50 Tf 56.00 743.89 Td (Client: anonymised. A public Go futures-backtesting engine, 254 stars.) Tj ET
+BT /F1 9.50 Tf 56.00 730.89 Td (Scope: fee and funding accounting in one path \(backtest service\).) Tj ET
+BT /F1 9.50 Tf 56.00 717.89 Td (Turnaround: 48 h from repo access. Fee: USD 29 / CNY 199. No reproducible finding, no fee.) Tj ET
+BT /F1 9.50 Tf 56.00 704.89 Td (This page is the deliverable format, filled with a real audit we ran. Names removed.) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 685.89 Td (METHOD) Tj ET
+0 0 0 rg
+BT /F1 9.50 Tf 56.00 673.89 Td (Read the engine path end to end \(order sizing, fill, funding, metrics\). For each suspected defect:) Tj ET
+BT /F1 9.50 Tf 56.00 661.89 Td (write a minimal reproduction, run it, and record the number before and after a fix. Nothing is) Tj ET
+BT /F1 9.50 Tf 56.00 649.89 Td (reported that we could not re-run ourselves. Severity is ranked by how much the headline number) Tj ET
+BT /F1 9.50 Tf 56.00 637.89 Td (moves, not by how interesting the bug is.) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 615.89 Td (FINDINGS \(RANKED\)) Tj ET
+0 0 0 rg
+0.60 G 0.40 w 56.00 613.89 m 539.28 613.89 l S 0 G
+BT /F2 8.50 Tf 60.00 601.89 Td (Finding) Tj ET
+BT /F2 8.50 Tf 200.00 601.89 Td (Severity) Tj ET
+BT /F2 8.50 Tf 268.00 601.89 Td (Effect on headline) Tj ET
+BT /F2 8.50 Tf 413.00 601.89 Td (Evidence) Tj ET
+0.60 G 0.40 w 56.00 596.89 m 539.28 596.89 l S 0 G
+BT /F1 9.20 Tf 60.00 580.89 Td (F1 funding at exit skipped) Tj ET
+BT /F1 9.20 Tf 200.00 580.89 Td (high) Tj ET
+BT /F1 9.20 Tf 268.00 580.89 Td (up to 0.25% equity/event) Tj ET
+BT /F1 9.20 Tf 413.00 580.89 Td (engine.go, 1 branch) Tj ET
+0.85 G 0.30 w 56.00 570.89 m 539.28 570.89 l S 0 G
+BT /F1 9.20 Tf 60.00 564.89 Td (F2 Sortino denominator) Tj ET
+BT /F1 9.20 Tf 200.00 564.89 Td (medium) Tj ET
+BT /F1 9.20 Tf 268.00 564.89 Td (Sortino low ~37% \(40% neg\)) Tj ET
+BT /F1 9.20 Tf 413.00 564.89 Td (metrics.go, 1 function) Tj ET
+0.85 G 0.30 w 56.00 554.89 m 539.28 554.89 l S 0 G
+BT /F1 9.20 Tf 60.00 548.89 Td (F3 nothing else) Tj ET
+BT /F1 9.20 Tf 200.00 548.89 Td (-) Tj ET
+BT /F1 9.20 Tf 268.00 548.89 Td (-) Tj ET
+BT /F1 9.20 Tf 413.00 548.89 Td (rest of path clean) Tj ET
+0.85 G 0.30 w 56.00 538.89 m 539.28 538.89 l S 0 G
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 524.89 Td (READING) Tj ET
+0 0 0 rg
+BT /F1 9.50 Tf 56.00 512.89 Td (F1: when a position is closed on the bar that carries a funding timestamp, the funding charge for) Tj ET
+BT /F1 9.50 Tf 56.00 500.89 Td (\(previous close, this close] is never applied - the position is already nil when the funding walk) Tj ET
+BT /F1 9.50 Tf 56.00 488.89 Td (runs, but the funding index still advances. At 25x leverage a 0.01% funding rate is 0.25% of equity,) Tj ET
+BT /F1 9.50 Tf 56.00 476.89 Td (so a strategy that closes often is quietly flattered. F2: downside deviation divides by the count of) Tj ET
+BT /F1 9.50 Tf 56.00 464.89 Td (negative returns instead of by all observations, so the ratio is not the Sortino anyone quotes; at) Tj ET
+BT /F1 9.50 Tf 56.00 452.89 Td (40% negative observations the denominator is inflated by sqrt\(N/K\) = 1.58, i.e. the reported ratio) Tj ET
+BT /F1 9.50 Tf 56.00 440.89 Td (sits about 37% too low. F3 matters as much as F1: we name what we did not find, so the report does) Tj ET
+BT /F1 9.50 Tf 56.00 428.89 Td (not read as a list of grievances.) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 410.89 Td (REPRODUCE) Tj ET
+0 0 0 rg
+BT /F3 8.20 Tf 56.00 398.89 Td (git clone <repo> && cd service/backtest && go test ./... # F1: one bar, one funding timestamp at) Tj ET
+BT /F3 8.20 Tf 56.00 387.89 Td (the close, one exit on that bar python3 -m auditkit.cli trades.csv --trials 1 # F2: reported vs) Tj ET
+BT /F3 8.20 Tf 56.00 376.89 Td (recomputed Sortino, side by side Both snippets ship with the report and run without edits.) Tj ET
+0.93 g 56.00 271.89 483.28 86.00 re f 0 g
+0.300 0.300 0.300 rg
+BT /F2 8.00 Tf 64.00 343.89 Td (SCOPE AND LIMITS) Tj ET
+0 0 0 rg
+BT /F1 8.60 Tf 64.00 331.89 Td (Files read: 4 of 4 in the backtest path \(100% of that path's SLOC\). Not read: exchange connectors, API) Tj ET
+BT /F1 8.60 Tf 64.00 321.39 Td (layer.) Tj ET
+BT /F1 8.60 Tf 64.00 310.89 Td (F1 is a logic defect, proven by execution. F2 is a definition mismatch: we say which definition we used and) Tj ET
+BT /F1 8.60 Tf 64.00 300.39 Td (which one the code uses.) Tj ET
+BT /F1 8.60 Tf 64.00 289.89 Td (We did not evaluate whether the strategy is profitable, and we did not touch keys, funds or accounts.) Tj ET
+BT /F1 8.60 Tf 64.00 279.39 Td (No finding, no fee. If the only findings are cosmetic, the fee is zero and we say so in writing.) Tj ET
+BT /F1 9.50 Tf 56.00 251.89 Td (rytjy - gbbggjvf@gmail.com - github.com/rytjy/backtest-audit-kit) Tj ET
+0.450 0.450 0.450 rg
+BT /F1 8.50 Tf 449.28 251.89 Td (1 / 1) Tj ET
+0 0 0 rg
+0.80 G 0.30 w 56.00 36.00 m 539.28 36.00 l S 0 G
+0.450 0.450 0.450 rg
+BT /F1 7.50 Tf 56.00 24.00 Td (sample deliverable - data from a real audit, client anonymised - method: cases/ + PORTFOLIO.md) Tj ET
+0 0 0 rg
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000267 00000 n 
+0000000364 00000 n 
+0000000466 00000 n 
+0000000561 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+5800
+%%EOF

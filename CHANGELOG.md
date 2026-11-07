@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.2.4 — 2026-11-07
+
+**Docs only.**
+
+- New [one-page sample audit report](docs/sample-audit-report.pdf): the deliverable format filled in with a real audit, client anonymised. Ranked findings, effect on the headline number, reproduction, and an explicit "scope and limits" box.
+- Linked from the offer block at the top of the README with an absolute URL, so it resolves both on GitHub and on the PyPI page.
+
 ## v0.2.3 — 2026-11-07
 
 **Docs only. No code change.**
