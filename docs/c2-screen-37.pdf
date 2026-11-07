@@ -1,0 +1,103 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R >> >> /Contents 7 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Length 4226 >>
+stream
+BT /F2 18.00 Tf 56.00 783.89 Td (Sample audit: 37 Collective2 strategies) Tj ET
+0.00 G 0.80 w 56.00 759.89 m 539.28 759.89 l S 0 G
+BT /F1 9.50 Tf 56.00 743.89 Td (Subject: leaderboard screen, 37 public strategies \(collective2.com/leader-board\)) Tj ET
+BT /F1 9.50 Tf 56.00 730.89 Td (Date: 2026-11-07   |   Scope: one pass, public pages only, no login) Tj ET
+BT /F1 9.50 Tf 56.00 717.89 Td (Deliverable: one page + the parsed table \(c2-screen-20261107.txt\)) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 698.89 Td (METHOD) Tj ET
+0 0 0 rg
+BT /F1 9.50 Tf 56.00 686.89 Td (37 ids from the server-rendered leaderboard. Each details page parsed for its monthly table; yearly) Tj ET
+BT /F1 9.50 Tf 56.00 674.89 Td (cells compounded locally against the printed YTD; annualised return recomputed as eq^\(365/days\)-1.) Tj ET
+BT /F1 9.50 Tf 56.00 662.89 Td (Four checks per strategy: best-3-month share of log return, annual return vs max drawdown, length of) Tj ET
+BT /F1 9.50 Tf 56.00 650.89 Td (record, win-rate edge vs break-even.) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 628.89 Td (RESULT \(36 ACTIVE STRATEGIES\)) Tj ET
+0 0 0 rg
+0.60 G 0.40 w 56.00 626.89 m 539.28 626.89 l S 0 G
+BT /F2 8.50 Tf 60.00 614.89 Td (Check) Tj ET
+BT /F2 8.50 Tf 228.00 614.89 Td (Hits) Tj ET
+BT /F2 8.50 Tf 268.00 614.89 Td (What it means) Tj ET
+0.60 G 0.40 w 56.00 609.89 m 539.28 609.89 l S 0 G
+BT /F1 9.20 Tf 60.00 593.89 Td (Concentration > 70%) Tj ET
+BT /F1 9.20 Tf 228.00 593.89 Td (19) Tj ET
+BT /F1 9.20 Tf 268.00 593.89 Td (best 3 months carry >70% of log return) Tj ET
+0.85 G 0.30 w 56.00 583.89 m 539.28 583.89 l S 0 G
+BT /F1 9.20 Tf 60.00 577.89 Td (Annual / drawdown > 2.5x) Tj ET
+BT /F1 9.20 Tf 228.00 577.89 Td (11) Tj ET
+BT /F1 9.20 Tf 268.00 577.89 Td (return large vs reported max drawdown) Tj ET
+0.85 G 0.30 w 56.00 567.89 m 539.28 567.89 l S 0 G
+BT /F1 9.20 Tf 60.00 561.89 Td (History < 18 months) Tj ET
+BT /F1 9.20 Tf 228.00 561.89 Td (11) Tj ET
+BT /F1 9.20 Tf 268.00 561.89 Td (annualised figure on a short record) Tj ET
+0.85 G 0.30 w 56.00 551.89 m 539.28 551.89 l S 0 G
+BT /F1 9.20 Tf 60.00 545.89 Td (Edge < 2 SE) Tj ET
+BT /F1 9.20 Tf 228.00 545.89 Td (3) Tj ET
+BT /F1 9.20 Tf 268.00 545.89 Td (win rate not distinguishable from break-even) Tj ET
+0.85 G 0.30 w 56.00 535.89 m 539.28 535.89 l S 0 G
+BT /F1 9.20 Tf 60.00 529.89 Td (No flag at all) Tj ET
+BT /F1 9.20 Tf 228.00 529.89 Td (14) Tj ET
+BT /F1 9.20 Tf 268.00 529.89 Td (checked, nothing found - also a deliverable) Tj ET
+0.85 G 0.30 w 56.00 519.89 m 539.28 519.89 l S 0 G
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 505.89 Td (READING) Tj ET
+0 0 0 rg
+BT /F1 9.50 Tf 56.00 493.89 Td (Arithmetic reconciles: every year's monthly cells compound to the printed YTD within 0.4pp, and the) Tj ET
+BT /F1 9.50 Tf 56.00 481.89 Td (annual figure uses calendar days \(error -1.6 to +0.2pp on 5 strategies\). The platform is not the) Tj ET
+BT /F1 9.50 Tf 56.00 469.89 Td (problem. 152974419: 14 months, +55.6%, annual 49.2%, max DD 7.5%, and one +24.1% month carries 84% of) Tj ET
+BT /F1 9.50 Tf 56.00 457.89 Td (the log return. 152326039: best 3 months = 194% of the total, so the rest of the record is net) Tj ET
+BT /F1 9.50 Tf 56.00 445.89 Td (negative.) Tj ET
+0.93 g 56.00 363.89 483.28 64.00 re f 0 g
+0.300 0.300 0.300 rg
+BT /F2 8.00 Tf 64.00 413.89 Td (SCOPE AND LIMITS) Tj ET
+0 0 0 rg
+BT /F1 8.60 Tf 64.00 401.89 Td (Leaderboard is a selection: winners only; strategies that disappeared are not measured.) Tj ET
+BT /F1 8.60 Tf 64.00 391.39 Td (Concentration uses log contributions; a share above 100% is arithmetic, not a bug.) Tj ET
+BT /F1 8.60 Tf 64.00 380.89 Td (All figures hypothetical per platform disclaimer; no broker statements were seen.) Tj ET
+BT /F1 8.60 Tf 64.00 370.39 Td (Edge test assumes fixed average win/loss, an approximation.) Tj ET
+BT /F1 9.50 Tf 56.00 343.89 Td (Prepared by rytjy - gbbggjvf@gmail.com - one number, 48h, no charge if nothing is found) Tj ET
+0.450 0.450 0.450 rg
+BT /F1 8.50 Tf 449.28 343.89 Td (1 / 1) Tj ET
+0 0 0 rg
+0.80 G 0.30 w 56.00 36.00 m 539.28 36.00 l S 0 G
+0.450 0.450 0.450 rg
+BT /F1 7.50 Tf 56.00 24.00 Td (github.com/rytjy/backtest-audit-kit  |  source: collective2.com/leader-board, 2026-11-07) Tj ET
+0 0 0 rg
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000267 00000 n 
+0000000364 00000 n 
+0000000466 00000 n 
+0000000561 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+4839
+%%EOF

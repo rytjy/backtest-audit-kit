@@ -10,11 +10,13 @@ returns; it finds the four ways a backtest most often lies.
 > **¥199 / $29**，查不出可复现的问题不收钱。给我一份交易 CSV、一段回测脚本、或一个引擎文件都行。
 > 详情与边界 → [PORTFOLIO.md](PORTFOLIO.md) · 邮箱 **gbbggjvf@gmail.com**
 > 交付物长什么样 → **[一页真实样例（已匿名）](https://github.com/rytjy/backtest-audit-kit/raw/main/docs/sample-audit-report.pdf)**
+> 另一种形态：整批验证（37 个公开策略一次扫完）→ **[一页样例](https://github.com/rytjy/backtest-audit-kit/raw/main/docs/c2-screen-37.pdf)**
 >
 > **Backtest audit / strategy-code review** — one path, one written report, 48 hours.
 > **¥199 / $29**, no reproducible finding, no fee. Send a trade CSV, a backtest script, or one engine file.
 > Scope and limits → [PORTFOLIO.md](PORTFOLIO.md) · **gbbggjvf@gmail.com**
 > What the deliverable looks like → **[one-page sample, real audit, anonymised](https://github.com/rytjy/backtest-audit-kit/raw/main/docs/sample-audit-report.pdf)**
+> Another shape: a whole-leaderboard pass (37 public strategies, one screen) → **[one-page sample](https://github.com/rytjy/backtest-audit-kit/raw/main/docs/c2-screen-37.pdf)**
 
 ## 一条命令（3 分钟）
 
