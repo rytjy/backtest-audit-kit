@@ -1,0 +1,101 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R >> >> /Contents 7 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Length 4115 >>
+stream
+BT /F2 18.00 Tf 56.00 783.89 Td (Work Sample - Backtest Verification) Tj ET
+0.00 G 0.80 w 56.00 759.89 m 539.28 759.89 l S 0 G
+BT /F1 9.50 Tf 56.00 743.89 Td (Independent checks on published backtest numbers: sample, selection, multiple testing.) Tj ET
+BT /F1 9.50 Tf 56.00 730.89 Td (Every claim below links to a public artifact.) Tj ET
+BT /F1 9.50 Tf 56.00 717.89 Td (Updated 2026-11-08  |  rytjy) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 698.89 Td (METHOD) Tj ET
+0 0 0 rg
+BT /F1 9.50 Tf 56.00 686.89 Td (A backtest number is only as good as its denominator. I rebuild the sample, count the trials, split) Tj ET
+BT /F1 9.50 Tf 56.00 674.89 Td (in and out of sample, and check whether the code computes what its docstring says. Findings are) Tj ET
+BT /F1 9.50 Tf 56.00 662.89 Td (written as a reproducible script plus a short report, and I retract my own numbers when the input) Tj ET
+BT /F1 9.50 Tf 56.00 650.89 Td (changes.) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 628.89 Td (Three samples) Tj ET
+0 0 0 rg
+0.60 G 0.40 w 56.00 626.89 m 539.28 626.89 l S 0 G
+BT /F2 8.50 Tf 60.00 614.89 Td (Sample) Tj ET
+BT /F2 8.50 Tf 180.00 614.89 Td (Check) Tj ET
+BT /F2 8.50 Tf 370.00 614.89 Td (Outcome) Tj ET
+0.60 G 0.40 w 56.00 609.89 m 539.28 609.89 l S 0 G
+BT /F1 9.20 Tf 60.00 593.89 Td (polars-anta) Tj ET
+BT /F1 9.20 Tf 180.00 593.89 Td (skewness/kurtosis bias vs docstring) Tj ET
+BT /F1 9.20 Tf 370.00 593.89 Td (Confirmed by maintainer; PR #34) Tj ET
+0.85 G 0.30 w 56.00 583.89 m 539.28 583.89 l S 0 G
+BT /F1 9.20 Tf 60.00 577.89 Td (C2 screen) Tj ET
+BT /F1 9.20 Tf 180.00 577.89 Td (37 strategies rebuilt independently) Tj ET
+BT /F1 9.20 Tf 370.00 577.89 Td (Arithmetic ok; 19 concentration flags) Tj ET
+0.85 G 0.30 w 56.00 567.89 m 539.28 567.89 l S 0 G
+BT /F1 9.20 Tf 60.00 561.89 Td (Case 13) Tj ET
+BT /F1 9.20 Tf 180.00 561.89 Td (PBO after data-loading fix) Tj ET
+BT /F1 9.20 Tf 370.00 561.89 Td (73.33% to 46.67%, retracted publicly) Tj ET
+0.85 G 0.30 w 56.00 551.89 m 539.28 551.89 l S 0 G
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 537.89 Td (READING) Tj ET
+0 0 0 rg
+BT /F1 9.50 Tf 56.00 525.89 Td (Sample 1: the library returned population moments while documenting sample estimators. I verified it) Tj ET
+BT /F1 9.50 Tf 56.00 513.89 Td (on a known window and sent the formulas; the maintainer confirmed and asked for a patch. Added a bias) Tj ET
+BT /F1 9.50 Tf 56.00 501.89 Td (flag, 7 NumPy-referenced tests, 221 tests pass. Sample 2: rebuilt every monthly table from 37 public) Tj ET
+BT /F1 9.50 Tf 56.00 489.89 Td (strategies. Compounding matches the platform within 0.4 pp, so the arithmetic is not the issue; the) Tj ET
+BT /F1 9.50 Tf 56.00 477.89 Td (risk sits in concentration \(19 of 37 above 70% from the top three months\) and short history. Sample) Tj ET
+BT /F1 9.50 Tf 56.00 465.89 Td (3: my first PBO came from a half-loaded sample; after the maintainer fixed loading, the same script) Tj ET
+BT /F1 9.50 Tf 56.00 453.89 Td (gave 46.67%. I published the correction and the reason.) Tj ET
+0.350 0.350 0.350 rg
+BT /F2 8.00 Tf 56.00 435.89 Td (REPRODUCE) Tj ET
+0 0 0 rg
+BT /F3 8.20 Tf 56.00 423.89 Td (Links: github.com/huuan26/polars-anta/pull/34 | github.com/rytjy/backtest-audit-kit |) Tj ET
+BT /F3 8.20 Tf 56.00 412.89 Td (pypi.org/project/backtest-audit-kit) Tj ET
+0.93 g 56.00 340.89 483.28 53.00 re f 0 g
+0.300 0.300 0.300 rg
+BT /F2 8.00 Tf 64.00 379.89 Td (SCOPE AND LIMITS) Tj ET
+0 0 0 rg
+BT /F1 8.60 Tf 64.00 367.89 Td (No live trading performance is claimed; all numbers come from backtests or public datasets.) Tj ET
+BT /F1 8.60 Tf 64.00 357.39 Td (Scope, price and delivery time are agreed in writing before work starts.) Tj ET
+BT /F1 8.60 Tf 64.00 346.89 Td (If a check cannot be run on the available data, the report says so instead of estimating.) Tj ET
+BT /F1 9.50 Tf 56.00 320.89 Td (rytjy  |  backtest verification  |  2026-11-08) Tj ET
+0.450 0.450 0.450 rg
+BT /F1 8.50 Tf 449.28 320.89 Td (1 / 1) Tj ET
+0 0 0 rg
+0.80 G 0.30 w 56.00 36.00 m 539.28 36.00 l S 0 G
+0.450 0.450 0.450 rg
+BT /F1 7.50 Tf 56.00 24.00 Td (One page. Links are the evidence.) Tj ET
+0 0 0 rg
+endstream
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000267 00000 n 
+0000000364 00000 n 
+0000000466 00000 n 
+0000000561 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+4728
+%%EOF
