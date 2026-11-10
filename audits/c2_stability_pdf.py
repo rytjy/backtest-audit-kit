@@ -42,7 +42,7 @@ class Page:
         return '\n'.join(self.ops).encode('latin-1','replace')
 
 
-COLS = [('id',74,0),('n',28,1),('ann%',42,1),('base',34,1),('worst',38,1),('drop',32,1),('month out',58,0),('that mo %',50,1),('best',32,1)]
+COLS = [('id',74,0),('n',26,1),('ann%',42,1),('base',32,1),('worst',36,1),('drop',30,1),('min ann%',46,1),('month out',52,0),('that mo %',44,1),('best',30,1)]
 ROW_H = 15.2
 
 def table_header(p, y):
@@ -58,7 +58,8 @@ def table_header(p, y):
 
 def table_row(p, y, r):
     vals = [r['id'], str(r['n']), '%.1f'%r['ann'], str(r['base']), str(r['worst']),
-            ('+%d'%(r['worst']-r['base']) if r['worst']!=r['base'] else '0'), '%d-%02d'%(r['wmonth'][0],r['wmonth'][1]),
+            ('+%d'%(r['worst']-r['base']) if r['worst']!=r['base'] else '0'), '%.1f'%r.get('min', r['ann']),
+            '%d-%02d'%(r['wmonth'][0],r['wmonth'][1]),
             '%+.1f'%r['wr'], str(r['best'])]
     x = ML
     for (name,w,al),v in zip(COLS,vals):
@@ -95,13 +96,14 @@ def build(rows):
       '25 of 36 touch rank 20 or worse at least once. Four never leave the top 10: 150377786, 141710744, 148705494, 150004796.',
       'Concentration and rank-dependence agree: the 19 flagged above 70% in the best three months have a median worst drop of 7 places; the other 17, 2 places.',
       'Worst single-month cases: 153432780 #8 to #23 without 2026-01 (+30.2%); 153416579 #15 to #29 without 2026-03 (+18.3%).',
+      'Rank and return part ways: the four that never leave the top 10 still lose 18.0 to 43.4 points of annualised return on a single omission; the smallest shortfall in the set, 13202557 at 1.0 point, belongs to the strategy ranked #28.',
     ]
     for h in heads:
         for i,ln in enumerate(wrap(h, W-ML-MR-10, 8.8)):
             p.text(ML+(0 if i else 3), y, ('- ' if i==0 else '   ')+ln if i==0 else '   '+ln, 8.8); y -= 11.4
         y -= 1.5
     y -= 8
-    p.text(ML, y, 'DETAIL  (rows sorted by worst place; drop = worst minus baseline, in ranks)', 7.8, 'F2', GRAY)
+    p.text(ML, y, 'DETAIL  (sorted by worst place; drop = worst minus baseline, in ranks; min ann% = lowest annualised return when one month is removed)', 7.8, 'F2', GRAY)
     y = table_header(p, y-12)
     for r in rows:
         if y < MB+46:

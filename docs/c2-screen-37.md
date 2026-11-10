@@ -46,7 +46,34 @@ Ranking = annualised return from the monthly cells, over the 36 active strategie
 - Concentration and rank-dependence agree: the 19 flagged above 70% in the best three months have a median worst drop of **7 places**; the other 17, **2 places**.
 - Worst single-month cases: 153432780 #8 -> #23 without 2026-01 (+30.2%); 153416579 #15 -> #29 without 2026-03 (+18.3%); 153204518 #6 -> #18 without 2026-03 (+25.6%); 152974419 #12 -> #23 without 2026-07 (+24.1%).
 - **Limit**: removing a positive month can only lower an annualised return, so the test is one-sided - it measures how much of a place rests on the best month, not symmetric robustness. Ranking by return/drawdown would reorder the set.
-- Full table, all 36 rows: [c2-rank-stability.pdf](c2-rank-stability.pdf) (2 pages). Renderer: `audits/c2_stability_pdf.py`.
+- Full table, all 36 rows: [c2-rank-stability.pdf](c2-rank-stability.pdf) (2 pages, now with a `min ann%` column). Renderer: `audits/c2_stability_pdf.py`.
+
+## Return stability under the same omissions
+
+Same set, same 36 omissions per strategy; the recorded quantity is now the lowest annualised return the record produces, not the worst place.
+
+| Measure | Value |
+|---|---|
+| Median shortfall | **9.9 pp** |
+| Strategies losing more than 5 / 10 / 20 pp | 27 / 18 / 9 of 36 |
+| Largest shortfall | **43.4 pp** - 150004796: 100.8% to 57.3% without 2026-04 |
+| Only strategy that turns negative | 152326039: 17.3% to **-2.1%** without 2026-07 |
+
+Ranks and returns do not move together. The four that never leave the top 10 by rank still lose 18.0 to 43.4 pp of annualised return on a single omission (150004796 -43.4, 148705494 -28.1, 150377786 -25.0, 141710744 -18.0). The smallest shortfall in the set, 1.0 pp, belongs to 13202557, which ranks #28. A stable place is not a stable number.
+
+| id | base ann% | min ann% | shortfall | month removed |
+|---|---|---|---|---|
+| 150004796 | 100.8 | 57.3 | 43.4 | 2026-04 |
+| 153432780 | 61.5 | 25.8 | 35.6 | 2026-01 |
+| 153204518 | 64.8 | 35.9 | 28.9 | 2026-03 |
+| 148705494 | 85.3 | 57.1 | 28.1 | 2025-04 |
+| 151330723 | 67.0 | 41.9 | 25.1 | 2025-04 |
+| 150377786 | 128.7 | 103.7 | 25.0 | 2025-08 |
+| 152974419 | 49.6 | 25.0 | 24.6 | 2026-07 |
+| 152169281 | 45.4 | 23.2 | 22.2 | 2026-04 |
+| 153416579 | 40.6 | 20.4 | 20.1 | 2026-03 |
+
+Nine rows shown; the full 36 are in the PDF column `min ann%`. Same one-sided caveat applies: removing a positive month lowers the return, so this measures exposure to the best month, not symmetric robustness.
 
 ## Corrections (2026-11-10)
 
