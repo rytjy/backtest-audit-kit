@@ -46,6 +46,7 @@ Ranking = annualised return from the monthly cells, over the 36 active strategie
 - Concentration and rank-dependence agree: the 19 flagged above 70% in the best three months have a median worst drop of **7 places**; the other 17, **2 places**.
 - Worst single-month cases: 153432780 #8 -> #23 without 2026-01 (+30.2%); 153416579 #15 -> #29 without 2026-03 (+18.3%); 153204518 #6 -> #18 without 2026-03 (+25.6%); 152974419 #12 -> #23 without 2026-07 (+24.1%).
 - **Limit**: removing a positive month can only lower an annualised return, so the test is one-sided - it measures how much of a place rests on the best month, not symmetric robustness. Ranking by return/drawdown would reorder the set.
+- Full table, all 36 rows: [c2-rank-stability.pdf](c2-rank-stability.pdf) (2 pages). Renderer: `audits/c2_stability_pdf.py`.
 
 ## Corrections (2026-11-10)
 

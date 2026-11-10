@@ -1,0 +1,517 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 7 0 R /F2 8 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 16629 >>
+stream
+BT /F2 15.50 Tf 48.00 785.89 Td (Rank stability: 36 Collective2 strategies, one month left out) Tj ET
+0.450 0.450 0.450 rg
+BT /F1 8.40 Tf 48.00 767.89 Td (Companion to docs/c2-screen-37.md  |  2026-11-10  |  every ranking number recomputed from the monthly cells) Tj ET
+0 0 0 rg
+0.00 G 0.80 w 48.00 753.89 m 547.28 753.89 l S 0 G
+0.450 0.450 0.450 rg
+BT /F2 7.80 Tf 48.00 737.89 Td (METHOD) Tj ET
+0 0 0 rg
+BT /F1 8.80 Tf 48.00 726.89 Td (Ranking = annualised return from each strategy's monthly cells, eq^\(365/days\)-1, days = asOf minus the) Tj ET
+BT /F1 8.80 Tf 48.00 715.49 Td (strategy-began date. For each of the 36 active strategies, one month is removed at a time, the remaining record) Tj ET
+BT /F1 8.80 Tf 48.00 704.09 Td (re-annualised over its actual days, the whole set re-ranked, and the worst place that strategy holds across its) Tj ET
+BT /F1 8.80 Tf 48.00 692.69 Td (own months recorded. Baseline is the published ranking.) Tj ET
+0.450 0.450 0.450 rg
+BT /F2 7.80 Tf 48.00 673.29 Td (HEADLINE) Tj ET
+0 0 0 rg
+BT /F1 8.80 Tf 51.00 662.29 Td (- Median worst place: 4 ranks below the current one. Six of 36 fall 10+ places; the largest drop is 15.) Tj ET
+BT /F1 8.80 Tf 51.00 649.39 Td (- 25 of 36 touch rank 20 or worse at least once. Four never leave the top 10: 150377786, 141710744, 148705494,) Tj ET
+BT /F1 8.80 Tf 48.00 637.99 Td (   150004796.) Tj ET
+BT /F1 8.80 Tf 51.00 625.09 Td (- Concentration and rank-dependence agree: the 19 flagged above 70% in the best three months have a median worst) Tj ET
+BT /F1 8.80 Tf 48.00 613.69 Td (   drop of 7 places; the other 17, 2 places.) Tj ET
+BT /F1 8.80 Tf 51.00 600.79 Td (- Worst single-month cases: 153432780 #8 to #23 without 2026-01 \(+30.2%\); 153416579 #15 to #29 without 2026-03) Tj ET
+BT /F1 8.80 Tf 48.00 589.39 Td (   \(+18.3%\).) Tj ET
+0.450 0.450 0.450 rg
+BT /F2 7.80 Tf 48.00 568.49 Td (DETAIL  \(rows sorted by worst place; drop = worst minus baseline, in ranks\)) Tj ET
+0 0 0 rg
+0.55 G 0.40 w 48.00 567.49 m 547.28 567.49 l S 0 G
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 49.00 556.49 Td (id) Tj ET
+0 0 0 rg
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 139.80 556.49 Td (n) Tj ET
+0 0 0 rg
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 169.20 556.49 Td (ann%) Tj ET
+0 0 0 rg
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 203.20 556.49 Td (base) Tj ET
+0 0 0 rg
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 237.00 556.49 Td (worst) Tj ET
+0 0 0 rg
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 273.20 556.49 Td (drop) Tj ET
+0 0 0 rg
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 297.00 556.49 Td (month out) Tj ET
+0 0 0 rg
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 360.20 556.49 Td (that mo %) Tj ET
+0 0 0 rg
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 413.20 556.49 Td (best) Tj ET
+0 0 0 rg
+0.55 G 0.40 w 48.00 552.49 m 547.28 552.49 l S 0 G
+BT /F1 8.30 Tf 49.00 541.49 Td (134962085) Tj ET
+BT /F1 8.30 Tf 135.90 541.49 Td (68) Tj ET
+BT /F1 8.30 Tf 169.80 541.49 Td (15.0) Tj ET
+BT /F1 8.30 Tf 211.90 541.49 Td (35) Tj ET
+BT /F1 8.30 Tf 249.90 541.49 Td (36) Tj ET
+BT /F1 8.30 Tf 281.90 541.49 Td (+1) Tj ET
+BT /F1 8.30 Tf 297.00 541.49 Td (2021-06) Tj ET
+BT /F1 8.30 Tf 377.75 541.49 Td (+12.6) Tj ET
+BT /F1 8.30 Tf 421.90 541.49 Td (33) Tj ET
+0.88 G 0.25 w 48.00 536.99 m 547.28 536.99 l S 0 G
+BT /F1 8.30 Tf 49.00 526.29 Td (143001897) Tj ET
+BT /F1 8.30 Tf 135.90 526.29 Td (46) Tj ET
+BT /F1 8.30 Tf 169.80 526.29 Td (17.9) Tj ET
+BT /F1 8.30 Tf 211.90 526.29 Td (31) Tj ET
+BT /F1 8.30 Tf 249.90 526.29 Td (36) Tj ET
+BT /F1 8.30 Tf 281.90 526.29 Td (+5) Tj ET
+BT /F1 8.30 Tf 297.00 526.29 Td (2023-03) Tj ET
+BT /F1 8.30 Tf 377.75 526.29 Td (+18.2) Tj ET
+BT /F1 8.30 Tf 421.90 526.29 Td (30) Tj ET
+0.88 G 0.25 w 48.00 521.79 m 547.28 521.79 l S 0 G
+BT /F1 8.30 Tf 49.00 511.09 Td (149476882) Tj ET
+BT /F1 8.30 Tf 135.90 511.09 Td (27) Tj ET
+BT /F1 8.30 Tf 169.80 511.09 Td (15.6) Tj ET
+BT /F1 8.30 Tf 211.90 511.09 Td (34) Tj ET
+BT /F1 8.30 Tf 249.90 511.09 Td (36) Tj ET
+BT /F1 8.30 Tf 281.90 511.09 Td (+2) Tj ET
+BT /F1 8.30 Tf 297.00 511.09 Td (2024-12) Tj ET
+BT /F1 8.30 Tf 377.75 511.09 Td (+13.0) Tj ET
+BT /F1 8.30 Tf 421.90 511.09 Td (30) Tj ET
+0.88 G 0.25 w 48.00 506.59 m 547.28 506.59 l S 0 G
+BT /F1 8.30 Tf 49.00 495.89 Td (150373429) Tj ET
+BT /F1 8.30 Tf 135.90 495.89 Td (24) Tj ET
+BT /F1 8.30 Tf 169.80 495.89 Td (13.3) Tj ET
+BT /F1 8.30 Tf 211.90 495.89 Td (36) Tj ET
+BT /F1 8.30 Tf 249.90 495.89 Td (36) Tj ET
+BT /F1 8.30 Tf 285.95 495.89 Td (0) Tj ET
+BT /F1 8.30 Tf 297.00 495.89 Td (2024-12) Tj ET
+BT /F1 8.30 Tf 381.80 495.89 Td (+5.7) Tj ET
+BT /F1 8.30 Tf 421.90 495.89 Td (31) Tj ET
+0.88 G 0.25 w 48.00 491.39 m 547.28 491.39 l S 0 G
+BT /F1 8.30 Tf 49.00 480.69 Td (152326039) Tj ET
+BT /F1 8.30 Tf 135.90 480.69 Td (17) Tj ET
+BT /F1 8.30 Tf 169.80 480.69 Td (17.3) Tj ET
+BT /F1 8.30 Tf 211.90 480.69 Td (32) Tj ET
+BT /F1 8.30 Tf 249.90 480.69 Td (36) Tj ET
+BT /F1 8.30 Tf 281.90 480.69 Td (+4) Tj ET
+BT /F1 8.30 Tf 297.00 480.69 Td (2025-08) Tj ET
+BT /F1 8.30 Tf 377.75 480.69 Td (+10.2) Tj ET
+BT /F1 8.30 Tf 421.90 480.69 Td (22) Tj ET
+0.88 G 0.25 w 48.00 476.19 m 547.28 476.19 l S 0 G
+BT /F1 8.30 Tf 49.00 465.49 Td (144168570) Tj ET
+BT /F1 8.30 Tf 135.90 465.49 Td (43) Tj ET
+BT /F1 8.30 Tf 169.80 465.49 Td (26.2) Tj ET
+BT /F1 8.30 Tf 211.90 465.49 Td (23) Tj ET
+BT /F1 8.30 Tf 249.90 465.49 Td (35) Tj ET
+BT /F1 8.30 Tf 277.85 465.49 Td (+12) Tj ET
+BT /F1 8.30 Tf 297.00 465.49 Td (2026-04) Tj ET
+BT /F1 8.30 Tf 377.75 465.49 Td (+46.1) Tj ET
+BT /F1 8.30 Tf 421.90 465.49 Td (20) Tj ET
+0.88 G 0.25 w 48.00 460.99 m 547.28 460.99 l S 0 G
+BT /F1 8.30 Tf 49.00 450.29 Td (30415311) Tj ET
+BT /F1 8.30 Tf 131.85 450.29 Td (226) Tj ET
+BT /F1 8.30 Tf 169.80 450.29 Td (15.7) Tj ET
+BT /F1 8.30 Tf 211.90 450.29 Td (33) Tj ET
+BT /F1 8.30 Tf 249.90 450.29 Td (35) Tj ET
+BT /F1 8.30 Tf 281.90 450.29 Td (+2) Tj ET
+BT /F1 8.30 Tf 297.00 450.29 Td (2008-05) Tj ET
+BT /F1 8.30 Tf 377.75 450.29 Td (+17.1) Tj ET
+BT /F1 8.30 Tf 421.90 450.29 Td (33) Tj ET
+0.88 G 0.25 w 48.00 445.79 m 547.28 445.79 l S 0 G
+BT /F1 8.30 Tf 49.00 435.09 Td (143110798) Tj ET
+BT /F1 8.30 Tf 135.90 435.09 Td (47) Tj ET
+BT /F1 8.30 Tf 169.80 435.09 Td (22.9) Tj ET
+BT /F1 8.30 Tf 211.90 435.09 Td (27) Tj ET
+BT /F1 8.30 Tf 249.90 435.09 Td (34) Tj ET
+BT /F1 8.30 Tf 281.90 435.09 Td (+7) Tj ET
+BT /F1 8.30 Tf 297.00 435.09 Td (2026-04) Tj ET
+BT /F1 8.30 Tf 377.75 435.09 Td (+28.7) Tj ET
+BT /F1 8.30 Tf 421.90 435.09 Td (22) Tj ET
+0.88 G 0.25 w 48.00 430.59 m 547.28 430.59 l S 0 G
+BT /F1 8.30 Tf 49.00 419.89 Td (146629969) Tj ET
+BT /F1 8.30 Tf 135.90 419.89 Td (36) Tj ET
+BT /F1 8.30 Tf 169.80 419.89 Td (19.6) Tj ET
+BT /F1 8.30 Tf 211.90 419.89 Td (30) Tj ET
+BT /F1 8.30 Tf 249.90 419.89 Td (34) Tj ET
+BT /F1 8.30 Tf 281.90 419.89 Td (+4) Tj ET
+BT /F1 8.30 Tf 297.00 419.89 Td (2026-04) Tj ET
+BT /F1 8.30 Tf 377.75 419.89 Td (+13.5) Tj ET
+BT /F1 8.30 Tf 421.90 419.89 Td (25) Tj ET
+0.88 G 0.25 w 48.00 415.39 m 547.28 415.39 l S 0 G
+BT /F1 8.30 Tf 49.00 404.69 Td (150759166) Tj ET
+BT /F1 8.30 Tf 135.90 404.69 Td (22) Tj ET
+BT /F1 8.30 Tf 169.80 404.69 Td (23.7) Tj ET
+BT /F1 8.30 Tf 211.90 404.69 Td (26) Tj ET
+BT /F1 8.30 Tf 249.90 404.69 Td (32) Tj ET
+BT /F1 8.30 Tf 281.90 404.69 Td (+6) Tj ET
+BT /F1 8.30 Tf 297.00 404.69 Td (2025-03) Tj ET
+BT /F1 8.30 Tf 377.75 404.69 Td (+12.6) Tj ET
+BT /F1 8.30 Tf 421.90 404.69 Td (19) Tj ET
+0.88 G 0.25 w 48.00 400.19 m 547.28 400.19 l S 0 G
+BT /F1 8.30 Tf 49.00 389.49 Td (144585915) Tj ET
+BT /F1 8.30 Tf 135.90 389.49 Td (43) Tj ET
+BT /F1 8.30 Tf 169.80 389.49 Td (21.6) Tj ET
+BT /F1 8.30 Tf 211.90 389.49 Td (29) Tj ET
+BT /F1 8.30 Tf 249.90 389.49 Td (30) Tj ET
+BT /F1 8.30 Tf 281.90 389.49 Td (+1) Tj ET
+BT /F1 8.30 Tf 297.00 389.49 Td (2023-11) Tj ET
+BT /F1 8.30 Tf 381.80 389.49 Td (+8.1) Tj ET
+BT /F1 8.30 Tf 421.90 389.49 Td (26) Tj ET
+0.88 G 0.25 w 48.00 384.99 m 547.28 384.99 l S 0 G
+BT /F1 8.30 Tf 49.00 374.29 Td (152221526) Tj ET
+BT /F1 8.30 Tf 135.90 374.29 Td (16) Tj ET
+BT /F1 8.30 Tf 169.80 374.29 Td (24.1) Tj ET
+BT /F1 8.30 Tf 211.90 374.29 Td (25) Tj ET
+BT /F1 8.30 Tf 249.90 374.29 Td (30) Tj ET
+BT /F1 8.30 Tf 281.90 374.29 Td (+5) Tj ET
+BT /F1 8.30 Tf 297.00 374.29 Td (2026-04) Tj ET
+BT /F1 8.30 Tf 381.80 374.29 Td (+7.1) Tj ET
+BT /F1 8.30 Tf 421.90 374.29 Td (22) Tj ET
+0.88 G 0.25 w 48.00 369.79 m 547.28 369.79 l S 0 G
+BT /F1 8.30 Tf 49.00 359.09 Td (13202557) Tj ET
+BT /F1 8.30 Tf 131.85 359.09 Td (262) Tj ET
+BT /F1 8.30 Tf 169.80 359.09 Td (21.6) Tj ET
+BT /F1 8.30 Tf 211.90 359.09 Td (28) Tj ET
+BT /F1 8.30 Tf 249.90 359.09 Td (29) Tj ET
+BT /F1 8.30 Tf 281.90 359.09 Td (+1) Tj ET
+BT /F1 8.30 Tf 297.00 359.09 Td (2005-03) Tj ET
+BT /F1 8.30 Tf 377.75 359.09 Td (+21.9) Tj ET
+BT /F1 8.30 Tf 421.90 359.09 Td (27) Tj ET
+0.88 G 0.25 w 48.00 354.59 m 547.28 354.59 l S 0 G
+BT /F1 8.30 Tf 49.00 343.89 Td (148311109) Tj ET
+BT /F1 8.30 Tf 135.90 343.89 Td (30) Tj ET
+BT /F1 8.30 Tf 169.80 343.89 Td (32.9) Tj ET
+BT /F1 8.30 Tf 211.90 343.89 Td (20) Tj ET
+BT /F1 8.30 Tf 249.90 343.89 Td (29) Tj ET
+BT /F1 8.30 Tf 281.90 343.89 Td (+9) Tj ET
+BT /F1 8.30 Tf 297.00 343.89 Td (2026-04) Tj ET
+BT /F1 8.30 Tf 377.75 343.89 Td (+30.7) Tj ET
+BT /F1 8.30 Tf 421.90 343.89 Td (14) Tj ET
+0.88 G 0.25 w 48.00 339.39 m 547.28 339.39 l S 0 G
+BT /F1 8.30 Tf 49.00 328.69 Td (153416579) Tj ET
+BT /F1 8.30 Tf 135.90 328.69 Td (13) Tj ET
+BT /F1 8.30 Tf 169.80 328.69 Td (40.6) Tj ET
+BT /F1 8.30 Tf 211.90 328.69 Td (15) Tj ET
+BT /F1 8.30 Tf 249.90 328.69 Td (29) Tj ET
+BT /F1 8.30 Tf 277.85 328.69 Td (+14) Tj ET
+BT /F1 8.30 Tf 297.00 328.69 Td (2026-03) Tj ET
+BT /F1 8.30 Tf 377.75 328.69 Td (+18.3) Tj ET
+BT /F1 8.30 Tf 421.90 328.69 Td (12) Tj ET
+0.88 G 0.25 w 48.00 324.19 m 547.28 324.19 l S 0 G
+BT /F1 8.30 Tf 49.00 313.49 Td (132148218) Tj ET
+BT /F1 8.30 Tf 135.90 313.49 Td (73) Tj ET
+BT /F1 8.30 Tf 169.80 313.49 Td (24.7) Tj ET
+BT /F1 8.30 Tf 211.90 313.49 Td (24) Tj ET
+BT /F1 8.30 Tf 249.90 313.49 Td (27) Tj ET
+BT /F1 8.30 Tf 281.90 313.49 Td (+3) Tj ET
+BT /F1 8.30 Tf 297.00 313.49 Td (2021-05) Tj ET
+BT /F1 8.30 Tf 377.75 313.49 Td (+10.7) Tj ET
+BT /F1 8.30 Tf 421.90 313.49 Td (23) Tj ET
+0.88 G 0.25 w 48.00 308.99 m 547.28 308.99 l S 0 G
+BT /F1 8.30 Tf 49.00 298.29 Td (152169281) Tj ET
+BT /F1 8.30 Tf 135.90 298.29 Td (18) Tj ET
+BT /F1 8.30 Tf 169.80 298.29 Td (45.4) Tj ET
+BT /F1 8.30 Tf 211.90 298.29 Td (14) Tj ET
+BT /F1 8.30 Tf 249.90 298.29 Td (26) Tj ET
+BT /F1 8.30 Tf 277.85 298.29 Td (+12) Tj ET
+BT /F1 8.30 Tf 297.00 298.29 Td (2026-04) Tj ET
+BT /F1 8.30 Tf 377.75 298.29 Td (+27.6) Tj ET
+BT /F1 8.30 Tf 421.90 298.29 Td (12) Tj ET
+0.88 G 0.25 w 48.00 293.79 m 547.28 293.79 l S 0 G
+BT /F1 8.30 Tf 49.00 283.09 Td (152043424) Tj ET
+BT /F1 8.30 Tf 135.90 283.09 Td (17) Tj ET
+BT /F1 8.30 Tf 169.80 283.09 Td (28.4) Tj ET
+BT /F1 8.30 Tf 211.90 283.09 Td (22) Tj ET
+BT /F1 8.30 Tf 249.90 283.09 Td (25) Tj ET
+BT /F1 8.30 Tf 281.90 283.09 Td (+3) Tj ET
+BT /F1 8.30 Tf 297.00 283.09 Td (2026-02) Tj ET
+BT /F1 8.30 Tf 381.80 283.09 Td (+6.7) Tj ET
+BT /F1 8.30 Tf 421.90 283.09 Td (19) Tj ET
+0.88 G 0.25 w 48.00 278.59 m 547.28 278.59 l S 0 G
+BT /F1 8.30 Tf 49.00 267.89 Td (152305186) Tj ET
+BT /F1 8.30 Tf 135.90 267.89 Td (17) Tj ET
+BT /F1 8.30 Tf 169.80 267.89 Td (30.7) Tj ET
+BT /F1 8.30 Tf 211.90 267.89 Td (21) Tj ET
+BT /F1 8.30 Tf 249.90 267.89 Td (23) Tj ET
+BT /F1 8.30 Tf 281.90 267.89 Td (+2) Tj ET
+BT /F1 8.30 Tf 297.00 267.89 Td (2026-04) Tj ET
+BT /F1 8.30 Tf 381.80 267.89 Td (+6.9) Tj ET
+BT /F1 8.30 Tf 421.90 267.89 Td (16) Tj ET
+0.88 G 0.25 w 48.00 263.39 m 547.28 263.39 l S 0 G
+BT /F1 8.30 Tf 49.00 252.69 Td (152974419) Tj ET
+BT /F1 8.30 Tf 135.90 252.69 Td (14) Tj ET
+BT /F1 8.30 Tf 169.80 252.69 Td (49.6) Tj ET
+BT /F1 8.30 Tf 211.90 252.69 Td (12) Tj ET
+BT /F1 8.30 Tf 249.90 252.69 Td (23) Tj ET
+BT /F1 8.30 Tf 277.85 252.69 Td (+11) Tj ET
+BT /F1 8.30 Tf 297.00 252.69 Td (2026-07) Tj ET
+BT /F1 8.30 Tf 377.75 252.69 Td (+24.1) Tj ET
+BT /F1 8.30 Tf 425.95 252.69 Td (9) Tj ET
+0.88 G 0.25 w 48.00 248.19 m 547.28 248.19 l S 0 G
+BT /F1 8.30 Tf 49.00 237.49 Td (153432780) Tj ET
+BT /F1 8.30 Tf 135.90 237.49 Td (13) Tj ET
+BT /F1 8.30 Tf 169.80 237.49 Td (61.5) Tj ET
+BT /F1 8.30 Tf 215.95 237.49 Td (8) Tj ET
+BT /F1 8.30 Tf 249.90 237.49 Td (23) Tj ET
+BT /F1 8.30 Tf 277.85 237.49 Td (+15) Tj ET
+BT /F1 8.30 Tf 297.00 237.49 Td (2026-01) Tj ET
+BT /F1 8.30 Tf 377.75 237.49 Td (+30.2) Tj ET
+BT /F1 8.30 Tf 425.95 237.49 Td (3) Tj ET
+0.88 G 0.25 w 48.00 232.99 m 547.28 232.99 l S 0 G
+BT /F1 8.30 Tf 49.00 222.29 Td (129575948) Tj ET
+BT /F1 8.30 Tf 135.90 222.29 Td (78) Tj ET
+BT /F1 8.30 Tf 169.80 222.29 Td (36.7) Tj ET
+BT /F1 8.30 Tf 211.90 222.29 Td (18) Tj ET
+BT /F1 8.30 Tf 249.90 222.29 Td (22) Tj ET
+BT /F1 8.30 Tf 281.90 222.29 Td (+4) Tj ET
+BT /F1 8.30 Tf 297.00 222.29 Td (2023-01) Tj ET
+BT /F1 8.30 Tf 377.75 222.29 Td (+63.5) Tj ET
+BT /F1 8.30 Tf 421.90 222.29 Td (14) Tj ET
+0.88 G 0.25 w 48.00 217.79 m 547.28 217.79 l S 0 G
+BT /F1 8.30 Tf 49.00 207.09 Td (143011111) Tj ET
+BT /F1 8.30 Tf 135.90 207.09 Td (48) Tj ET
+BT /F1 8.30 Tf 169.80 207.09 Td (37.3) Tj ET
+BT /F1 8.30 Tf 211.90 207.09 Td (17) Tj ET
+BT /F1 8.30 Tf 249.90 207.09 Td (21) Tj ET
+BT /F1 8.30 Tf 281.90 207.09 Td (+4) Tj ET
+BT /F1 8.30 Tf 297.00 207.09 Td (2023-11) Tj ET
+BT /F1 8.30 Tf 377.75 207.09 Td (+31.4) Tj ET
+BT /F1 8.30 Tf 421.90 207.09 Td (15) Tj ET
+0.88 G 0.25 w 48.00 202.59 m 547.28 202.59 l S 0 G
+BT /F1 8.30 Tf 49.00 191.89 Td (147255777) Tj ET
+BT /F1 8.30 Tf 135.90 191.89 Td (34) Tj ET
+BT /F1 8.30 Tf 169.80 191.89 Td (35.3) Tj ET
+BT /F1 8.30 Tf 211.90 191.89 Td (19) Tj ET
+BT /F1 8.30 Tf 249.90 191.89 Td (20) Tj ET
+BT /F1 8.30 Tf 281.90 191.89 Td (+1) Tj ET
+BT /F1 8.30 Tf 297.00 191.89 Td (2025-03) Tj ET
+BT /F1 8.30 Tf 381.80 191.89 Td (+8.4) Tj ET
+BT /F1 8.30 Tf 421.90 191.89 Td (15) Tj ET
+0.88 G 0.25 w 48.00 187.39 m 547.28 187.39 l S 0 G
+BT /F1 8.30 Tf 49.00 176.69 Td (152305234) Tj ET
+BT /F1 8.30 Tf 135.90 176.69 Td (17) Tj ET
+BT /F1 8.30 Tf 169.80 176.69 Td (37.4) Tj ET
+BT /F1 8.30 Tf 211.90 176.69 Td (16) Tj ET
+BT /F1 8.30 Tf 249.90 176.69 Td (20) Tj ET
+BT /F1 8.30 Tf 281.90 176.69 Td (+4) Tj ET
+BT /F1 8.30 Tf 297.00 176.69 Td (2026-04) Tj ET
+BT /F1 8.30 Tf 381.80 176.69 Td (+8.3) Tj ET
+BT /F1 8.30 Tf 421.90 176.69 Td (12) Tj ET
+0.88 G 0.25 w 48.00 172.19 m 547.28 172.19 l S 0 G
+BT /F1 8.30 Tf 49.00 161.49 Td (153081578) Tj ET
+BT /F1 8.30 Tf 135.90 161.49 Td (13) Tj ET
+BT /F1 8.30 Tf 169.80 161.49 Td (53.0) Tj ET
+BT /F1 8.30 Tf 211.90 161.49 Td (11) Tj ET
+BT /F1 8.30 Tf 249.90 161.49 Td (18) Tj ET
+BT /F1 8.30 Tf 281.90 161.49 Td (+7) Tj ET
+BT /F1 8.30 Tf 297.00 161.49 Td (2026-04) Tj ET
+BT /F1 8.30 Tf 377.75 161.49 Td (+16.2) Tj ET
+BT /F1 8.30 Tf 425.95 161.49 Td (4) Tj ET
+0.88 G 0.25 w 48.00 156.99 m 547.28 156.99 l S 0 G
+BT /F1 8.30 Tf 49.00 146.29 Td (153204518) Tj ET
+BT /F1 8.30 Tf 135.90 146.29 Td (14) Tj ET
+BT /F1 8.30 Tf 169.80 146.29 Td (64.8) Tj ET
+BT /F1 8.30 Tf 215.95 146.29 Td (6) Tj ET
+BT /F1 8.30 Tf 249.90 146.29 Td (18) Tj ET
+BT /F1 8.30 Tf 277.85 146.29 Td (+12) Tj ET
+BT /F1 8.30 Tf 297.00 146.29 Td (2026-03) Tj ET
+BT /F1 8.30 Tf 377.75 146.29 Td (+25.6) Tj ET
+BT /F1 8.30 Tf 425.95 146.29 Td (4) Tj ET
+0.88 G 0.25 w 48.00 141.79 m 547.28 141.79 l S 0 G
+BT /F1 8.30 Tf 49.00 131.09 Td (114146885) Tj ET
+BT /F1 8.30 Tf 131.85 131.09 Td (108) Tj ET
+BT /F1 8.30 Tf 169.80 131.09 Td (49.1) Tj ET
+BT /F1 8.30 Tf 211.90 131.09 Td (13) Tj ET
+BT /F1 8.30 Tf 249.90 131.09 Td (15) Tj ET
+BT /F1 8.30 Tf 281.90 131.09 Td (+2) Tj ET
+BT /F1 8.30 Tf 297.00 131.09 Td (2020-04) Tj ET
+BT /F1 8.30 Tf 377.75 131.09 Td (+94.1) Tj ET
+BT /F1 8.30 Tf 425.95 131.09 Td (9) Tj ET
+0.88 G 0.25 w 48.00 126.59 m 547.28 126.59 l S 0 G
+BT /F1 8.30 Tf 49.00 115.89 Td (149244504) Tj ET
+BT /F1 8.30 Tf 135.90 115.89 Td (27) Tj ET
+BT /F1 8.30 Tf 169.80 115.89 Td (55.8) Tj ET
+BT /F1 8.30 Tf 215.95 115.89 Td (9) Tj ET
+BT /F1 8.30 Tf 249.90 115.89 Td (15) Tj ET
+BT /F1 8.30 Tf 281.90 115.89 Td (+6) Tj ET
+BT /F1 8.30 Tf 297.00 115.89 Td (2025-12) Tj ET
+BT /F1 8.30 Tf 377.75 115.89 Td (+34.5) Tj ET
+BT /F1 8.30 Tf 425.95 115.89 Td (4) Tj ET
+0.88 G 0.25 w 48.00 111.39 m 547.28 111.39 l S 0 G
+BT /F1 8.30 Tf 49.00 100.69 Td (150565426) Tj ET
+BT /F1 8.30 Tf 135.90 100.69 Td (23) Tj ET
+BT /F1 8.30 Tf 169.80 100.69 Td (53.8) Tj ET
+BT /F1 8.30 Tf 211.90 100.69 Td (10) Tj ET
+BT /F1 8.30 Tf 249.90 100.69 Td (15) Tj ET
+BT /F1 8.30 Tf 281.90 100.69 Td (+5) Tj ET
+BT /F1 8.30 Tf 297.00 100.69 Td (2025-02) Tj ET
+BT /F1 8.30 Tf 377.75 100.69 Td (+21.4) Tj ET
+BT /F1 8.30 Tf 425.95 100.69 Td (5) Tj ET
+0.88 G 0.25 w 48.00 96.19 m 547.28 96.19 l S 0 G
+0.80 G 0.30 w 48.00 34.00 m 547.28 34.00 l S 0 G
+0.450 0.450 0.450 rg
+BT /F1 7.20 Tf 48.00 23.00 Td (github.com/rytjy/backtest-audit-kit  |  docs/c2-screen-37.md  |  pages cached 2026-11-07) Tj ET
+0 0 0 rg
+0.450 0.450 0.450 rg
+BT /F1 7.60 Tf 515.28 23.00 Td (1 / 2) Tj ET
+0 0 0 rg
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 7 0 R /F2 8 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 4840 >>
+stream
+BT /F2 11.00 Tf 48.00 789.89 Td (Rank stability, continued) Tj ET
+0.450 0.450 0.450 rg
+BT /F1 8.20 Tf 48.00 781.89 Td (same method and set) Tj ET
+0 0 0 rg
+0.55 G 0.40 w 48.00 778.89 m 547.28 778.89 l S 0 G
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 49.00 767.89 Td (id) Tj ET
+0 0 0 rg
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 139.80 767.89 Td (n) Tj ET
+0 0 0 rg
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 169.20 767.89 Td (ann%) Tj ET
+0 0 0 rg
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 203.20 767.89 Td (base) Tj ET
+0 0 0 rg
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 237.00 767.89 Td (worst) Tj ET
+0 0 0 rg
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 273.20 767.89 Td (drop) Tj ET
+0 0 0 rg
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 297.00 767.89 Td (month out) Tj ET
+0 0 0 rg
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 360.20 767.89 Td (that mo %) Tj ET
+0 0 0 rg
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 413.20 767.89 Td (best) Tj ET
+0 0 0 rg
+0.55 G 0.40 w 48.00 763.89 m 547.28 763.89 l S 0 G
+BT /F1 8.30 Tf 49.00 752.89 Td (151330723) Tj ET
+BT /F1 8.30 Tf 135.90 752.89 Td (20) Tj ET
+BT /F1 8.30 Tf 169.80 752.89 Td (67.0) Tj ET
+BT /F1 8.30 Tf 215.95 752.89 Td (5) Tj ET
+BT /F1 8.30 Tf 249.90 752.89 Td (14) Tj ET
+BT /F1 8.30 Tf 281.90 752.89 Td (+9) Tj ET
+BT /F1 8.30 Tf 297.00 752.89 Td (2025-04) Tj ET
+BT /F1 8.30 Tf 377.75 752.89 Td (+33.1) Tj ET
+BT /F1 8.30 Tf 425.95 752.89 Td (5) Tj ET
+0.88 G 0.25 w 48.00 748.39 m 547.28 748.39 l S 0 G
+BT /F1 8.30 Tf 49.00 737.69 Td (152701320) Tj ET
+BT /F1 8.30 Tf 135.90 737.69 Td (15) Tj ET
+BT /F1 8.30 Tf 169.80 737.69 Td (63.2) Tj ET
+BT /F1 8.30 Tf 215.95 737.69 Td (7) Tj ET
+BT /F1 8.30 Tf 249.90 737.69 Td (14) Tj ET
+BT /F1 8.30 Tf 281.90 737.69 Td (+7) Tj ET
+BT /F1 8.30 Tf 297.00 737.69 Td (2025-09) Tj ET
+BT /F1 8.30 Tf 377.75 737.69 Td (+19.3) Tj ET
+BT /F1 8.30 Tf 425.95 737.69 Td (3) Tj ET
+0.88 G 0.25 w 48.00 733.19 m 547.28 733.19 l S 0 G
+BT /F1 8.30 Tf 49.00 722.49 Td (148705494) Tj ET
+BT /F1 8.30 Tf 135.90 722.49 Td (28) Tj ET
+BT /F1 8.30 Tf 169.80 722.49 Td (85.3) Tj ET
+BT /F1 8.30 Tf 215.95 722.49 Td (4) Tj ET
+BT /F1 8.30 Tf 253.95 722.49 Td (8) Tj ET
+BT /F1 8.30 Tf 281.90 722.49 Td (+4) Tj ET
+BT /F1 8.30 Tf 297.00 722.49 Td (2025-04) Tj ET
+BT /F1 8.30 Tf 377.75 722.49 Td (+50.7) Tj ET
+BT /F1 8.30 Tf 425.95 722.49 Td (2) Tj ET
+0.88 G 0.25 w 48.00 717.99 m 547.28 717.99 l S 0 G
+BT /F1 8.30 Tf 49.00 707.29 Td (150004796) Tj ET
+BT /F1 8.30 Tf 135.90 707.29 Td (25) Tj ET
+BT /F1 8.30 Tf 165.75 707.29 Td (100.8) Tj ET
+BT /F1 8.30 Tf 215.95 707.29 Td (2) Tj ET
+BT /F1 8.30 Tf 253.95 707.29 Td (8) Tj ET
+BT /F1 8.30 Tf 281.90 707.29 Td (+6) Tj ET
+BT /F1 8.30 Tf 297.00 707.29 Td (2026-04) Tj ET
+BT /F1 8.30 Tf 377.75 707.29 Td (+69.1) Tj ET
+BT /F1 8.30 Tf 425.95 707.29 Td (1) Tj ET
+0.88 G 0.25 w 48.00 702.79 m 547.28 702.79 l S 0 G
+BT /F1 8.30 Tf 49.00 692.09 Td (141710744) Tj ET
+BT /F1 8.30 Tf 135.90 692.09 Td (51) Tj ET
+BT /F1 8.30 Tf 169.80 692.09 Td (91.5) Tj ET
+BT /F1 8.30 Tf 215.95 692.09 Td (3) Tj ET
+BT /F1 8.30 Tf 253.95 692.09 Td (4) Tj ET
+BT /F1 8.30 Tf 281.90 692.09 Td (+1) Tj ET
+BT /F1 8.30 Tf 297.00 692.09 Td (2022-11) Tj ET
+BT /F1 8.30 Tf 377.75 692.09 Td (+21.3) Tj ET
+BT /F1 8.30 Tf 425.95 692.09 Td (2) Tj ET
+0.88 G 0.25 w 48.00 687.59 m 547.28 687.59 l S 0 G
+BT /F1 8.30 Tf 49.00 676.89 Td (150377786) Tj ET
+BT /F1 8.30 Tf 135.90 676.89 Td (24) Tj ET
+BT /F1 8.30 Tf 165.75 676.89 Td (128.7) Tj ET
+BT /F1 8.30 Tf 215.95 676.89 Td (1) Tj ET
+BT /F1 8.30 Tf 253.95 676.89 Td (1) Tj ET
+BT /F1 8.30 Tf 285.95 676.89 Td (0) Tj ET
+BT /F1 8.30 Tf 297.00 676.89 Td (2024-12) Tj ET
+BT /F1 8.30 Tf 381.80 676.89 Td (+2.9) Tj ET
+BT /F1 8.30 Tf 425.95 676.89 Td (1) Tj ET
+0.88 G 0.25 w 48.00 672.39 m 547.28 672.39 l S 0 G
+0.94 g 48.00 560.19 499.28 91.50 re f 0 g
+0.250 0.250 0.250 rg
+BT /F2 7.60 Tf 56.00 639.69 Td (SCOPE AND LIMITS) Tj ET
+0 0 0 rg
+BT /F1 8.20 Tf 56.00 628.69 Td (One-sided test: removing a positive month can only lower an annualised return, so this measures how much of a place) Tj ET
+BT /F1 8.20 Tf 56.00 618.19 Td (rests on the best month, not symmetric robustness.) Tj ET
+BT /F1 8.20 Tf 56.00 607.69 Td (Rank runs on annualised return only; ranking by return/drawdown would reorder the set.) Tj ET
+BT /F1 8.20 Tf 56.00 597.19 Td (146629969 and 150565426 lack begin/asOf dates on the cached page and were annualised by inverting the published) Tj ET
+BT /F1 8.20 Tf 56.00 586.69 Td (annual return.) Tj ET
+BT /F1 8.20 Tf 56.00 576.19 Td (Set: 37 published ids, one inactive \(124293346\), 36 active. The leaderboard is a selection - delisted strategies are) Tj ET
+BT /F1 8.20 Tf 56.00 565.69 Td (not measured.) Tj ET
+0.80 G 0.30 w 48.00 34.00 m 547.28 34.00 l S 0 G
+0.450 0.450 0.450 rg
+BT /F1 7.20 Tf 48.00 23.00 Td (github.com/rytjy/backtest-audit-kit  |  docs/c2-screen-37.md  |  pages cached 2026-11-07) Tj ET
+0 0 0 rg
+0.450 0.450 0.450 rg
+BT /F1 7.60 Tf 515.28 23.00 Td (2 / 2) Tj ET
+0 0 0 rg
+endstream
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+8 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000263 00000 n 
+0000016945 00000 n 
+0000017087 00000 n 
+0000021979 00000 n 
+0000022076 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+22178
+%%EOF
