@@ -221,3 +221,17 @@ python3 examples/run_demo.py            # 四个检查器全跑一遍
 - [`outpost/`](./outpost/) — 一个"只放能跑、能查、能被否证的东西"的据点：
   单文件表格整理工具（零依赖、离线自检 14 项）+ 一份**被自己推翻**的回测（做空山寨无 edge）
   + 一次"两条腿都断了"的数据源修复。不写客户名、不写"我能做什么"。
+
+
+## 账本审计（ledger）：单份或批量
+
+    python3 -m auditkit.ledger run examples/ledger/clustered.json
+    python3 -m auditkit.ledger batch examples/ledger/manifest.json --out report.md
+
+七张卡针对的是「交易账本」而不是净值 CSV：账本恒等、逐笔回撤、样本膨胀、成本 vs 过路费、前视扫描、数值稳定性、止盈是否低于往返费。
+
+两种输入形状都吃：带 pnl_usdt / margin / leverage 的账本，或旧 dump 的 trades + ledger 序列。
+缺字段的卡标「未测」，不猜：dump 没有 balance 就不做账本恒等，没有入场时间就不做样本膨胀。
+
+批量输出一张对照表（笔数 / 期末权益 / MDD / 估算成本 / 成本倍数 / 命中卡）加逐卡覆盖统计。
+批量提高的是吞吐，不是命中率 —— 同一个策略不会因为跑得多而变简单。

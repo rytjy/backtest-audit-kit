@@ -1,0 +1,92 @@
+{
+ "capital": 100.0,
+ "balance": 100.6,
+ "positions": {},
+ "trades": [
+  {
+   "id": 1,
+   "symbol": "BTC",
+   "side": "long",
+   "entry_time": "06-01 10:00",
+   "exit_time": "06-01 10:00",
+   "entry_px": 73000,
+   "exit_px": 73036.5,
+   "pnl_pct": 0.05,
+   "pnl_usdt": 0.1,
+   "margin": 10,
+   "leverage": 20,
+   "reason": "demo"
+  },
+  {
+   "id": 2,
+   "symbol": "BTC",
+   "side": "long",
+   "entry_time": "06-01 10:01",
+   "exit_time": "06-01 10:01",
+   "entry_px": 73010,
+   "exit_px": 73046.50499999999,
+   "pnl_pct": 0.05,
+   "pnl_usdt": 0.1,
+   "margin": 10,
+   "leverage": 20,
+   "reason": "demo"
+  },
+  {
+   "id": 3,
+   "symbol": "BTC",
+   "side": "long",
+   "entry_time": "06-01 10:02",
+   "exit_time": "06-01 10:02",
+   "entry_px": 73020,
+   "exit_px": 73056.51,
+   "pnl_pct": 0.05,
+   "pnl_usdt": 0.1,
+   "margin": 10,
+   "leverage": 20,
+   "reason": "demo"
+  },
+  {
+   "id": 4,
+   "symbol": "BTC",
+   "side": "long",
+   "entry_time": "06-01 10:03",
+   "exit_time": "06-01 10:03",
+   "entry_px": 73030,
+   "exit_px": 73066.515,
+   "pnl_pct": 0.05,
+   "pnl_usdt": 0.1,
+   "margin": 10,
+   "leverage": 20,
+   "reason": "demo"
+  },
+  {
+   "id": 5,
+   "symbol": "BTC",
+   "side": "long",
+   "entry_time": "06-01 10:04",
+   "exit_time": "06-01 10:04",
+   "entry_px": 73040,
+   "exit_px": 73076.51999999999,
+   "pnl_pct": 0.05,
+   "pnl_usdt": 0.1,
+   "margin": 10,
+   "leverage": 20,
+   "reason": "demo"
+  },
+  {
+   "id": 6,
+   "symbol": "BTC",
+   "side": "long",
+   "entry_time": "06-01 10:05",
+   "exit_time": "06-01 10:05",
+   "entry_px": 73050,
+   "exit_px": 73086.525,
+   "pnl_pct": 0.05,
+   "pnl_usdt": 0.1,
+   "margin": 10,
+   "leverage": 20,
+   "reason": "demo"
+  }
+ ],
+ "total_pnl": 0.6
+}

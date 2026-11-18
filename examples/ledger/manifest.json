@@ -1,0 +1,16 @@
+{
+ "jobs": [
+  {
+   "name": "clustered",
+   "state": "clustered.json"
+  },
+  {
+   "name": "broken-books",
+   "state": "broken_books.json"
+  },
+  {
+   "name": "control-cost-free",
+   "state": "control_cost_free.json"
+  }
+ ]
+}
