@@ -67,7 +67,8 @@ def main():
     ta = as_int(rpc(R, "eth_call", [{"to": V, "data": "0x01e1d114"}, "latest"]))
     su = as_int(rpc(R, "eth_call", [{"to": V, "data": "0x18160ddd"}, "latest"]))
     print("totalAssets=%.2f shares=%.2f pps=%.8f"
-          % (ta / 10 ** adec, su / 10 ** sdec, (ta / su if su else 0)))
+          % (ta / 10 ** adec, su / 10 ** sdec,
+             ((ta / 10 ** adec) / (su / 10 ** sdec) if su else 0)))
 
 if __name__ == "__main__":
     main()
