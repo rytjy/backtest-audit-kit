@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.2.6 - 2026-11-18
+
+**One new subcommand: `sweep`.**
+
+- `python3 -m auditkit.ledger sweep state.json --grid 1.5,3,8 --leverage 20,40,50,100`
+  turns a ledger into the cost-sensitivity table: round-trip cost per trade,
+  cost as a percentage of margin at each leverage, and the break-even win rate
+  `p* = (TP + c) / (2·TP)` for each take-profit level.
+- Motivated by a real ledger: 43 trades, mean price move −0.1066% per trade
+  against 0.130% round-trip cost, so 20/43 wins before cost and 8/43 after;
+  at 40x with a 1.5%-of-margin target the required win rate is 223%.
+- Pure standard library; works on any state.json carrying entry_px/exit_px/side.
+
 ## v0.2.5 - 2026-11-07
 
 **Docs only. No code change.**

@@ -11,6 +11,7 @@ import os
 import sys
 
 from .batch import cmd_batch
+from .sweep import cmd_sweep
 from .cards import (
     card_costs,
     card_identity,
@@ -69,10 +70,20 @@ def main(argv=None):
     bt.add_argument("manifest")
     bt.add_argument("--out", help="write the markdown report here")
     bt.add_argument("--json", action="store_true")
+    sw = sub.add_parser("sweep", help="cost sensitivity over take-profit and leverage")
+    sw.add_argument("state")
+    sw.add_argument("--config")
+    sw.add_argument("--grid", default="1.5,3,5,8,10,15,26")
+    sw.add_argument("--leverage", default="20,40,50,100")
     args = ap.parse_args(argv)
 
     if args.cmd == "batch":
         return cmd_batch(args.manifest, out_path=args.out, as_json=args.json)
+    if args.cmd == "sweep":
+        cfg = load_state(args.config) if args.config else None
+        return cmd_sweep(load_state(args.state), cfg,
+                         [float(x) for x in args.grid.split(",")],
+                         [int(x) for x in args.leverage.split(",")])
     return _run(args.state, args.config, args.code, args.ticks, args.json)
 
 
